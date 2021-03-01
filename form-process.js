@@ -22,7 +22,7 @@ function processForm() {
             mode: 'no-cors',
             method: "GET",
             headers: {
-                mode: 'no-cors',
+                "mode": 'no-cors',
                 "Content-type": "application/json;charset=UTF-8",
                 "Authorization": "Bearer 00D1t000000DDG9!AR0AQHj.85NxoR7P1QUwMom3K3ZRwkgWqZAw2Vwj215XlFNZISCZqwv8CZ5CAtWQGLa6Yct3rGJms5dY.JdQOubWahSBLKo6"
             }
