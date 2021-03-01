@@ -22,9 +22,8 @@ function processForm() {
             mode: 'no-cors',
             method: "POST",
             headers: {
-                "mode": 'no-cors',
                 "Content-type": "application/json;charset=UTF-8"
-            }
+            },
         })
         .then(response => response.json())
         .then(json => console.log(json))
