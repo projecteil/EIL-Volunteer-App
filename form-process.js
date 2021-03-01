@@ -28,8 +28,6 @@ function processForm() {
             headers: {
                 "Content-type": "application/json;charset=UTF-8"
             },
-        }).then(json => console.log(json.json())).catch((error) => {
-            console.error('Error:', error);
-          });
+        }).then(res => res.json()).then(json => console.log(json)).catch(error => console.error('Error:', error));
         
 }
