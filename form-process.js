@@ -18,6 +18,7 @@ function processForm() {
     console.log(email);
     console.log(password);
     console.log(bio);
+    let data ="";
     let accessToken = "";
 
 
@@ -30,10 +31,11 @@ function processForm() {
                 "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
                 "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
             },
-        }).then(res => res.json()).then(function(json) {accessToken = json.access_token}).catch((error) => {
+        }).then(res => res.json()).then(json => data = json).catch((error) => {
             console.error('Error:', error);
           });
 
-          console.log(accessToken);
+          console.log(data);
+          console.log(data.access_token);1
         
 }
