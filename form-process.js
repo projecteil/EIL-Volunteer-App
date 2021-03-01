@@ -19,12 +19,10 @@ function processForm() {
     console.log(password);
     console.log(bio);
     fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/0036N000005PKBcQAO', {
-            mode: 'no-cors',
             method: "GET",
             headers: {
-                mode: 'no-cors',
                 "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer 00D1t000000DDG9!AR0AQMufdpHAJWCxV.wq6TCsCeO1R3gE5AwSfKKiDvLp1703CRVUjIgOejYufcg8rYf40tVfOZth5kIncrKDruimW.2jVFIW"
+                "Authorization": "Bearer 00D1t000000DDG9!AR0AQHj.85NxoR7P1QUwMom3K3ZRwkgWqZAw2Vwj215XlFNZISCZqwv8CZ5CAtWQGLa6Yct3rGJms5dY.JdQOubWahSBLKo6"
             }
         })
         .then(response => response.json())
