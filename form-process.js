@@ -62,12 +62,13 @@ async function processForm() {
         .catch(err => console.log(err));
 
     let contactData = {
-        "FirstName": "Test1",
-        "LastName": "Test1",
-        "MobilePhone": "0892044873",
-        "Password__c": "Test123",
-        "GW_Volunteers__Volunteer_Notes__c": "Test Bio",
-        "GW_Volunteers__Volunteer_Skills__c": "Computer usage",
+        "FirstName": firstName,
+        "LastName": lastName,
+        "MobilePhone": phoneNumber,
+        "Email": email,
+        "Password__c": password,
+        "GW_Volunteers__Volunteer_Notes__c": bio,
+        "GW_Volunteers__Volunteer_Skills__c": skills,
         "AccountId": "0011t00000ppMtOAAU"
     }
 
