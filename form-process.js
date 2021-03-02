@@ -31,7 +31,7 @@ async function processForm() {
         });
 
         let data = await response.json();
-        setTimeout(console.log(data), 8000);
-        setTimeout(console.log(response),12000);
+        setTimeout(console.log(data[access_token]), 8000);
+        setTimeout(console.log(response[access_token]),12000);
         
 }
