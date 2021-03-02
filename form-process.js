@@ -2,7 +2,7 @@ window.onload = function () {
     document.getElementById("ContactPreference").addEventListener("focus", processForm);
 }
 
-function processForm() {
+async function processForm() {
     let firstName = document.getElementById("FirstName").value;
     let lastName = document.getElementById("LastName").value;
     let phoneNumber = document.getElementById("PhoneNumber").value;
