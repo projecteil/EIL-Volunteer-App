@@ -71,7 +71,7 @@ async function processForm() {
         "AccountId": "0011t00000ppMtOAAU"
     }
 
-    let responseViewContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
+    let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
             method: "POST",
             headers: {
                 "Content-type": "application/json;charset=UTF-8",
