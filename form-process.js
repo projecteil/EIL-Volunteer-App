@@ -33,7 +33,7 @@ function processForm() {
             },
         }).then((res) => {data=res});
 
-        console.log(accessToken);
-        console.log(data);
+        setTimeout(console.log(accessToken), 4000);
+        setTimeout(console.log(data), 5000);
         
 }
