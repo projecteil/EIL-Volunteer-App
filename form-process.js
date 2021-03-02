@@ -12,12 +12,6 @@ async function processForm() {
     let skills = document.getElementById("Skills").value;
     let dateOfBirth = document.getElementById("DateOfBirth").value;
     let contactPreference = document.getElementById("ContactPreference").value;
-    console.log(firstName);
-    console.log(lastName);
-    console.log(phoneNumber);
-    console.log(email);
-    console.log(password);
-    console.log(bio);
 
 
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=OldMonk1234auRJQemePs9mac0guNA7ZrFa", {
@@ -31,8 +25,8 @@ async function processForm() {
         });
 
         let data = await response.json();
-        setTimeout(console.log(data[access_token]), 8000);
-        setTimeout(console.log(response),12000);
-        setTimeout(console.log(data.access_token), 13000);
+        let data2 = await JSON.parse(response)
+        setTimeout(console.log(data), 8000);
+        setTimeout(console.log(data2), 13000);
         
 }
