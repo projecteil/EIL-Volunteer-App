@@ -1,27 +1,3 @@
-window.onload = function () {
-    document.getElementById("ContactPreference").addEventListener("focus", processForm);
-}
-
-function processForm() {
-    let firstName = document.getElementById("FirstName").value;
-    let lastName = document.getElementById("LastName").value;
-    let phoneNumber = document.getElementById("PhoneNumber").value;
-    let email = document.getElementById("Email").value;
-    let password = document.getElementById("Password").value;
-    let bio = document.getElementById("Bio").value;
-    let skills = document.getElementById("Skills").value;
-    let dateOfBirth = document.getElementById("DateOfBirth").value;
-    let contactPreference = document.getElementById("ContactPreference").value;
-    console.log(firstName);
-    console.log(lastName);
-    console.log(phoneNumber);
-    console.log(email);
-    console.log(password);
-    console.log(bio);
-
-}
-
-
 async function processForm() {
     let firstName = document.getElementById("FirstName").value;
     let lastName = document.getElementById("LastName").value;
