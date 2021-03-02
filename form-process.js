@@ -53,7 +53,6 @@ async function processForm() {
     let responseViewContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/0036N000005PKBcQAO', {
             method: "GET",
             headers: {
-                "mode": 'no-cors',
                 "Content-type": "application/json;charset=UTF-8",
                 "Authorization": "Bearer " + data["access_token"]
             }
@@ -62,4 +61,25 @@ async function processForm() {
         .then(json => console.log(json))
         .catch(err => console.log(err));
 
+    let contactData = {
+        "FirstName": "Test1",
+        "LastName": "Test1",
+        "MobilePhone": "0892044873",
+        "Password__c": "Test123",
+        "GW_Volunteers__Volunteer_Notes__c": "Test Bio",
+        "GW_Volunteers__Volunteer_Skills__c": "Computer usage",
+        "AccountId": "0011t00000ppMtOAAU"
+    }
+
+    let responseViewContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json;charset=UTF-8",
+                "Authorization": "Bearer " + data["access_token"]
+            },
+            body: JSON.stringify(contactData),
+        })
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
 }
