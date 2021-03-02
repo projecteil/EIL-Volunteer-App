@@ -12,7 +12,7 @@
 <body>
   <!-- partial:index.partial.html -->
   <!-- multistep form -->
-  <form id="msform" onsubmit="processForm()">
+  <form id="msform">
     <!-- progressbar -->
     <ul id="progressbar">
       <li class="active">Account Setup</li>
@@ -38,7 +38,7 @@
       <input type="text" id="DateOfBirth" placeholder="Date of Birth" />
       <input type="text" id="ContactPreference" placeholder="Contact Preference" />
       <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="submit" name="next" class="next action-button" value="Submit" />
+      <input type="button" name="next" class="next action-button" value="Submit" onclick="processForm()"/>
     </fieldset>
   </form>
   <!-- partial -->
