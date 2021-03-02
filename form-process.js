@@ -31,7 +31,7 @@ function processForm() {
                 "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
                 "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
             },
-        }).then(res => res.json()).then(json => console.log(json)).catch((error) => {
+        }).then(res => res.json()).then(json => console.log(json.access_token, json[access_token])).catch((error) => {
             console.error('Error:', error);
           });
 
