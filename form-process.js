@@ -48,6 +48,7 @@ async function processForm() {
         "MobilePhone": phoneNumber,
         "Email": email,
         "Password__c": password,
+        "Birthdate": dateOfBirth,
         "AccountId": "0011t00000ppMtOAAU"
     }
 
