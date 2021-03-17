@@ -8,7 +8,7 @@ async function processForm() {
     let email = document.getElementById("Email").value;
     let password = document.getElementById("Password").value;
     let dateOfBirth = document.getElementById("DateOfBirth").value;
-    
+
     formDiv.style.cssText = "display: None";
     confirmEmailDiv.style.cssText = "display: block !important"
 
@@ -31,16 +31,16 @@ async function processForm() {
 
 
 
-    let responseViewContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/0036N000005PKBcQAO', {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + data["access_token"]
-            }
-        })
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
+    // let responseViewContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/0036N000005PKBcQAO', {
+    //         method: "GET",
+    //         headers: {
+    //             "Content-type": "application/json;charset=UTF-8",
+    //             "Authorization": "Bearer " + data["access_token"]
+    //         }
+    //     })
+    //     .then(response => response.json())
+    //     .then(json => console.log(json))
+    //     .catch(err => console.log(err));
 
     let contactData = {
         "FirstName": firstName,
@@ -48,8 +48,6 @@ async function processForm() {
         "MobilePhone": phoneNumber,
         "Email": email,
         "Password__c": password,
-        "GW_Volunteers__Volunteer_Notes__c": bio,
-        "GW_Volunteers__Volunteer_Skills__c": skills,
         "AccountId": "0011t00000ppMtOAAU"
     }
 
