@@ -11,6 +11,11 @@ async function processForm() {
 
     formDiv.style.cssText = "display: None";
     confirmEmailDiv.style.cssText = "display: block !important"
+    dateOfBirth = dateOfBirth.split('/');
+    dateOfBirth = dateOfBirth[1]+"/"+dateOfBirth[0]+"/"+dateOfBirth[2];
+    dateOfBirth = new Date(dateOfBirth);
+    dateOfBirth = dateOfBirth.toISOString();
+
 
 
 
@@ -48,7 +53,7 @@ async function processForm() {
         "MobilePhone": phoneNumber,
         "Email": email,
         "Password__c": password,
-        "Birthdate": "2013-09-29T18:46:19Z",
+        "Birthdate": dateOfBirth,
         "AccountId": "0011t00000ppMtOAAU"
     }
 
