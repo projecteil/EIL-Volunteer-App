@@ -153,8 +153,6 @@ body {
 }
 
 span.email-confirm-footer {
-	text-align: right !important;
-	padding-left: 68%;
 	color: #666;
 	font-size: 11px;
 }
