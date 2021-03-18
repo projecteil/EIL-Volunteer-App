@@ -90,6 +90,7 @@ async function processLogIn() {
         let data = await response.json();
         setTimeout(console.log(data), 8000);
         setTimeout(console.log(data["access_token"]), 13000);
+        console.log(response);
 
 
 
@@ -101,10 +102,11 @@ async function processLogIn() {
             }
         });
 
-        data = await responseViewContact.json();
-        setTimeout(console.log(data), 8000);
-        setTimeout(console.log(data[0]), 13000);
-        let serverPassword = data["Passcode__c"];
+        secretData = await responseViewContact.json();
+        console.log(responseViewContact);
+        setTimeout(console.log(secretData), 8000);
+        setTimeout(console.log(secretData[0]), 13000);
+        let serverPassword = secretData["Passcode__c"];
 
         if (password == serverPassword) {
             formDiv.style.cssText = "display:none;";
