@@ -41,19 +41,6 @@ async function processForm() {
     setTimeout(console.log(data), 8000);
     setTimeout(console.log(data["access_token"]), 13000);
 
-
-
-    // let responseViewContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/0036N000005PKBcQAO', {
-    //         method: "GET",
-    //         headers: {
-    //             "Content-type": "application/json;charset=UTF-8",
-    //             "Authorization": "Bearer " + data["access_token"]
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(json => console.log(json))
-    //     .catch(err => console.log(err));
-
     let contactData = {
         "FirstName": firstName,
         "LastName": lastName,
@@ -91,7 +78,6 @@ async function processLogIn() {
     } else {
         formDiv.style.cssText = "display:none;";
         loader.style.cssText = "display:block;";
-        //window.location.replace("./dashboard-home.html");
     }
 
 
@@ -115,15 +101,22 @@ async function processLogIn() {
 
 
 
-    let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+id+from+Contact+where+Email+=+'ansh31@gmail.com'", {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + data["access_token"]
-            }
-        })
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
+    let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Passcode__c+from+Contact+where+Email+=+'" + email + "'", {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json;charset=UTF-8",
+            "Authorization": "Bearer " + data["access_token"]
+        }
+    });
+
+    let data = await responseViewContact.json();
+    setTimeout(console.log(data), 8000);
+    setTimeout(console.log(data["Passcode__c"]), 13000);
+    let serverPassword = data["Passcode__c"];
+
+    if (password == serverPassword) {
+        window.location.replace("./dashboard-home.html");
+
+    }
 
 }
