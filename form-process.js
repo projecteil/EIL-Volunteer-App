@@ -109,7 +109,7 @@ async function processLogIn() {
         }
     });
 
-    let data = await responseViewContact.json();
+    data = await responseViewContact.json();
     setTimeout(console.log(data), 8000);
     setTimeout(console.log(data["Passcode__c"]), 13000);
     let serverPassword = data["Passcode__c"];
