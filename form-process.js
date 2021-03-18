@@ -88,10 +88,7 @@ async function processLogIn() {
         });
 
         let data = await response.json();
-        setTimeout(console.log(data), 8000);
         setTimeout(console.log(data["access_token"]), 13000);
-        console.log(response);
-
 
 
         let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Passcode__c+from+Contact+where+Email+=+'" + email + "'", {
@@ -103,12 +100,11 @@ async function processLogIn() {
         });
 
         secretData = await responseViewContact.json();
-        console.log(responseViewContact);
         setTimeout(console.log(secretData), 8000);
-        setTimeout(console.log(secretData[0]), 13000);
-        setTimeout(console.log(secretData[1]), 13000);
-        setTimeout(console.log(secretData["records"]), 13000);
-        setTimeout(console.log(secretData["done"]), 13000);
+        setTimeout(console.log(secretData["records"]["Array(1)"]), 13000);
+        setTimeout(console.log(secretData["records"]["Array"]), 13000);
+        setTimeout(console.log(secretData["records"]["0"]), 13000);
+        setTimeout(console.log(secretData["records"]["Array(1)"]["Passcode__c"]), 13000);
         let serverPassword = secretData["Passcode__c"];
 
         if (password == serverPassword) {
