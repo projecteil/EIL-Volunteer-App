@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <!--Loading Spinner-->
+  <div id="loader" class='peeek-loading'>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div>
+    <form id="msform">
+      <p class="email-confirm-heading">Welcome to EIL Ireland!</p><br>
+      <img id="treeimg" src="img/tree.jpg">
+
+      <fieldset>
+        <h2 class="fs-title">Login to access your account</h2><br>
+        <p id="errormsg" class="error-msg"></p>
+        <input type="text" id="Email" placeholder="Enter your email" required />
+        <input type="password" id="Password" placeholder="Enter your password" required />
+        <span class="email-confirm-footer"><a href="">Forgot Password?</a></span>
+        <input type="button" name="next" class="next action-button" value="Login" onclick="processLogIn()" />
+      </fieldset>
+      <div class="footer-txt">Don't have an account? <a href="index.html" target="_blank">Sign-up</a></div>
+    </form>
+
+  </div>
+
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+  <script src="./script.js"></script>
+  <script src="form-process.js"></script>
+
+</body>
+
+</html>

@@ -1,12 +1,13 @@
 /*custom font*/
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 
 body {
 	font-family: montserrat, arial, verdana;
 	height: 100%;
-	background-color:#fdfdfd;
+	background-color: #fdfdfd;
 
 }
+
 /*form styles*/
 #msform {
 	width: 485px;
@@ -14,25 +15,30 @@ body {
 	text-align: center;
 	position: relative;
 }
+
 #msform fieldset {
-	background:#f7f7f7;
+	background-color: #ffffff;
 	border: 0 none;
 	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0px 0px 40px 1px rgb(0 0 0 / 5%);
+	box-shadow: 0px 0px 40px 3px rgb(0 0 0 / 7%);
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 80%;
 	margin: 0 10%;
-	
+
 	/*stacking fieldsets above each other*/
 	position: relative;
 }
+
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
 	display: none;
 }
+
 /*inputs*/
-#msform input, #msform textarea {
+#msform input,
+#msform textarea {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -43,27 +49,40 @@ body {
 	color: #2C3E50;
 	font-size: 13px;
 }
+
 /*buttons*/
 #msform .action-button {
-	width: 200px;
+	width: 160px;
 	background: #27AE60;
-	font-weight: bold;
 	color: white;
 	border: 0 none;
-	border-radius: 1px;
 	cursor: pointer;
 	padding: 10px 5px;
-	margin: 10px 5px;
+	margin: 20px 5px 10px 5px;
+	text-transform: uppercase;
+	border-radius: 20px;
+	transition: 0.3s ease-in;
+	font-weight: bold;
 }
-#msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+
+#msform .action-button:focus {
+	border: none;
+	outline: none;
 }
+
+#msform .action-button:hover {
+	opacity: 0.9;
+	transform: scale(0.98);
+}
+
 /*headings*/
 .fs-title {
 	font-size: 18px;
 	color: #2C3E50;
 	margin-bottom: 10px;
+	font-weight: 600;
 }
+
 .fs-subtitle {
 	font-weight: normal;
 	font-size: 13px;
@@ -71,60 +90,251 @@ body {
 	margin-bottom: 20px;
 }
 
-.name{
+.name {
 	width: 49% !important;
 }
 
-.disabled{
+.disabled {
 	background: #dddddd !important;
 	cursor: not-allowed !important;
 }
 
-.disabled:hover{
+.disabled:hover {
 	box-shadow: none !important;
 }
 
-.terms-text{
+.terms-text {
 	font-size: .75rem;
-    line-height: .975rem;
+	line-height: .975rem;
 	color: #666;
 }
 
-.footer-txt{
+.footer-txt {
 	font-size: 15px;
-    color: #2C3E50;
-    margin-bottom: 20px;
+	color: #2C3E50;
+	margin-bottom: 20px;
 	margin-top: 5%;
 	text-align: center;
 }
 
-.img-icons{
+.img-icons {
 	width: 8%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.email-confirm{
+.email-confirm {
 	text-align: center !important;
 	margin: 12% auto;
 	line-height: 25px;
 }
 
-#emailconfirm{
+#emailconfirm {
 	display: none;
 }
 
-.email-confirm-heading{
+.email-confirm-heading {
 	font-size: 22px !important;
-    font-weight: bold !important;
+	font-weight: bold !important;
 }
 
-.seprator{
+.seprator {
 	width: 35%;
 	margin: 1.2% auto;
 }
 
-#treeimg{
+#treeimg {
 	width: 40%;
+}
+
+.email-confirm-footer {
+	font-size: 14px;
+}
+
+span.email-confirm-footer {
+	text-align: right !important;
+	padding-left: 68%;
+	color: #666;
+	font-size: 11px;
+}
+
+.email-confirm-footer a {
+	color: #666;
+}
+
+/***********************************************Loading Spinner************************************************/
+.peeek-loading {
+	background-color: #ff3366;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+.peeek-loading ul {
+	position: absolute;
+	left: calc(50% - 0.7em);
+	top: calc(50% - 4.2em);
+	display: inline-block;
+	text-indent: 2.8em;
+}
+
+.peeek-loading ul li:after,
+.peeek-loading ul:after {
+	width: 1.4em;
+	height: 1.4em;
+	background-color: #fff;
+	border-radius: 100%;
+}
+
+.peeek-loading ul li:after,
+.peeek-loading ul:after {
+	content: "";
+	display: block;
+}
+
+.peeek-loading ul:after {
+	position: absolute;
+	top: 2.8em;
+}
+
+.peeek-loading li {
+	position: absolute;
+	padding-bottom: 5.6em;
+	top: 0;
+	left: 0;
+}
+
+.peeek-loading li:nth-child(1) {
+	transform: rotate(0deg);
+	animation-delay: 0.125s;
+}
+
+.peeek-loading li:nth-child(1):after {
+	animation-delay: 0.125s;
+}
+
+.peeek-loading li:nth-child(2) {
+	transform: rotate(36deg);
+	animation-delay: 0.25s;
+}
+
+.peeek-loading li:nth-child(2):after {
+	animation-delay: 0.25s;
+}
+
+.peeek-loading li:nth-child(3) {
+	transform: rotate(72deg);
+	animation-delay: 0.375s;
+}
+
+.peeek-loading li:nth-child(3):after {
+	animation-delay: 0.375s;
+}
+
+.peeek-loading li:nth-child(4) {
+	transform: rotate(108deg);
+	animation-delay: 0.5s;
+}
+
+.peeek-loading li:nth-child(4):after {
+	animation-delay: 0.5s;
+}
+
+.peeek-loading li:nth-child(5) {
+	transform: rotate(144deg);
+	animation-delay: 0.625s;
+}
+
+.peeek-loading li:nth-child(5):after {
+	animation-delay: 0.625s;
+}
+
+.peeek-loading li:nth-child(6) {
+	transform: rotate(180deg);
+	animation-delay: 0.75s;
+}
+
+.peeek-loading li:nth-child(6):after {
+	animation-delay: 0.75s;
+}
+
+.peeek-loading li:nth-child(7) {
+	transform: rotate(216deg);
+	animation-delay: 0.875s;
+}
+
+.peeek-loading li:nth-child(7):after {
+	animation-delay: 0.875s;
+}
+
+.peeek-loading li:nth-child(8) {
+	transform: rotate(252deg);
+	animation-delay: 1s;
+}
+
+.peeek-loading li:nth-child(8):after {
+	animation-delay: 1s;
+}
+
+.peeek-loading li:nth-child(9) {
+	transform: rotate(288deg);
+	animation-delay: 1.125s;
+}
+
+.peeek-loading li:nth-child(9):after {
+	animation-delay: 1.125s;
+}
+
+.peeek-loading li:nth-child(10) {
+	transform: rotate(324deg);
+	animation-delay: 1.25s;
+}
+
+.peeek-loading li:nth-child(10):after {
+	animation-delay: 1.25s;
+}
+
+.peeek-loading li {
+	animation: dotAnimation 2.5s infinite;
+}
+
+@keyframes dotAnimation {
+
+	0%,
+	55%,
+	100% {
+		padding: 0 0 5.6em 0;
+	}
+
+	5%,
+	50% {
+		padding: 2.8em 0;
+	}
+}
+
+.peeek-loading li:after {
+	animation: dotAnimationTwo 2.5s infinite;
+}
+
+@-webkit-keyframes dotAnimationTwo {
+
+	0%,
+	55%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	5%,
+	50% {
+		opacity: 0.5;
+		transform: scale(0.5);
+	}
 }

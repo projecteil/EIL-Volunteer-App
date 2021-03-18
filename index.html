@@ -16,7 +16,7 @@
     <img class="img-icons" src="img/email.svg">
     Please confirm your email address. We have sent the verification email to your account.
     <hr class="seprator">
-    No message received? <a href="">Resend Sign-up Email</a>.<br> Or<br>Already confirmed your email address? <a href = "" target="_blank">Log in</a>
+    <span class="email-confirm-footer">No message received? <a href="">Resend Sign-up Email</a>.<br>Or<br>Already confirmed your email address? <a href = "" target="_blank">Log in</a></span>
     </div>
   
   <form id="msform">
@@ -25,6 +25,7 @@
 
     <fieldset>
       <h2 class="fs-title">Sign up for volunteering</h2><br>
+      <p id="errormsg" class="error-msg"></p>
       <input class="name" type="text" id="FirstName" placeholder="First Name" required />
       <input class="name" type="text" id="LastName" placeholder="Last Name" required />
       <input type="text" id="PhoneNumber" placeholder="Phone Number" required />
