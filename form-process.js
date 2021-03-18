@@ -100,7 +100,7 @@ async function processLogIn() {
         secretData = await responseViewContact.json();
         setTimeout(console.log(secretData), 8000);
         setTimeout(console.log(secretData["records"]["0"]["Passcode__c"]), 13000);
-        let serverPassword = secretData["Passcode__c"];
+        let serverPassword = secretData["records"]["0"]["Passcode__c"];
 
         if (password == serverPassword) {
             formDiv.style.cssText = "display:none;";
