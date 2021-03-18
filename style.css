@@ -159,6 +159,14 @@ span.email-confirm-footer {
 
 .email-confirm-footer a {
 	color: #666;
+	text-align: right !important;
+	padding-left: 68%;
+}
+
+.error-msg {
+	font-size: 12px;
+	color: red;
+	padding-bottom: 18px;
 }
 
 /***********************************************Loading Spinner************************************************/

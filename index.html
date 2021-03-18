@@ -6,40 +6,45 @@
   <title>Volunteer Registration</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/58237fbc2d.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
   <div>
     <div id="emailconfirm" class="email-confirm">
-    <p class="email-confirm-heading">Thank you for signing up, You're just one step away from Volunteering.</p><br>
-    <img class="img-icons" src="img/email.svg">
-    Please confirm your email address. We have sent the verification email to your account.
-    <hr class="seprator">
-    <span class="email-confirm-footer">No message received? <a href="">Resend Sign-up Email</a>.<br>Or<br>Already confirmed your email address? <a href = "" target="_blank">Log in</a></span>
+      <p class="email-confirm-heading">Thank you for signing up, You're just one step away from Volunteering.</p><br>
+      <img class="img-icons" src="img/email.svg">
+      Please confirm your email address. We have sent the verification email to your account.
+      <hr class="seprator">
+      <span class="email-confirm-footer">No message received? <a href="">Resend Sign-up Email</a>.<br>Or<br>Already
+        confirmed your email address? <a href="" target="_blank">Log in</a></span>
     </div>
-  
-  <form id="msform">
-    <p class="email-confirm-heading">Join our network of volunteers!</p><br>
-    <img id="treeimg" src="img/tree.jpg">
 
-    <fieldset>
-      <h2 class="fs-title">Sign up for volunteering</h2><br>
-      <p id="errormsg" class="error-msg"></p>
-      <input class="name" type="text" id="FirstName" placeholder="First Name" required />
-      <input class="name" type="text" id="LastName" placeholder="Last Name" required />
-      <input type="text" id="PhoneNumber" placeholder="Phone Number" required />
-      <input type="text" id="Email" placeholder="Email" required />
-      <input type="text" id="DateOfBirth" placeholder="Date of Birth - DD/MM/YYYY" />
-      <input type="password" id="Password" placeholder="Password" required />
-      <span class='terms-text'>By signing up, you agree to EIL's <a href="" target="_blank" >Privacy Policy</a> and <a href="" target="_blank" >Terms of Use</a><br><br></span>
-      <input type="button" name="next" class="next action-button" value="Submit" onclick="processForm()"/>
-    </fieldset>
-    <div class="footer-txt">Already have an account? <a href = "" target="_blank">Log in</a></div>
-  </form>
-  
-</div>
-  
+    <form id="msform">
+      <p class="email-confirm-heading">Join our network of volunteers!</p><br>
+      <img id="treeimg" src="img/tree.jpg">
+
+      <fieldset>
+        <h2 class="fs-title">Sign up for volunteering</h2><br>
+        <p id="errormsg" class="error-msg"></p>
+        <input class="name" type="text" id="FirstName" placeholder="First Name" required />
+        <input class="name" type="text" id="LastName" placeholder="Last Name" required />
+        <input type="text" id="PhoneNumber" placeholder="Phone Number" required />
+        <input type="text" id="Email" placeholder="Email" required />
+        <input type="text" id="DateOfBirth" placeholder="Date of Birth - DD/MM/YYYY" />
+        <input type="password" id="Password" placeholder="Password" required />
+        <span class='terms-text'>By signing up, you agree to EIL's <a
+            href="https://www.eilireland.org/terms-of-use-and-policies/" target="_self">Privacy Policy</a> and <a
+            href="https://www.eilireland.org/terms-of-use-and-policies/#afs-nav-terms-of-use" target="_self">Terms of
+            Use</a><br><br></span>
+        <input type="button" name="next" class="next action-button" value="Submit" onclick="processForm()" />
+      </fieldset>
+      <div class="footer-txt">Already have an account? <a href="login.html" target="_self">Log in</a></div>
+    </form>
+
+  </div>
+
   <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
