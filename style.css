@@ -159,6 +159,9 @@ span.email-confirm-footer {
 
 .email-confirm-footer a {
 	color: #666;
+}
+
+.text-right {
 	text-align: right !important;
 	padding-left: 68%;
 }
