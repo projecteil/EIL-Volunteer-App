@@ -106,6 +106,9 @@ async function processLogIn() {
         console.log(responseViewContact);
         setTimeout(console.log(secretData), 8000);
         setTimeout(console.log(secretData[0]), 13000);
+        setTimeout(console.log(secretData[1]), 13000);
+        setTimeout(console.log(secretData["records"]), 13000);
+        setTimeout(console.log(secretData["done"]), 13000);
         let serverPassword = secretData["Passcode__c"];
 
         if (password == serverPassword) {
