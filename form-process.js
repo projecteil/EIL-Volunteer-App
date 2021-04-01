@@ -102,7 +102,7 @@ async function processLogIn() {
             method: "GET",
             headers: {
                 "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + accessToken
+                "Authorization": "Bearer " + getAccessToken()
             }
         });
 
