@@ -151,7 +151,7 @@ async function editProfile() {
         }
     });
 
-    secretData1 = await responseViewContact.json();
+    secretData1 = await responseGetProfile.json();
     setTimeout(console.log(secretData1), 8000);
     // setTimeout(console.log(secretData["records"]["0"]["Passcode__c"]), 13000);
     // let serverPassword = secretData["records"]["0"]["Passcode__c"];
