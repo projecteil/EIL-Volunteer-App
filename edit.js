@@ -33,8 +33,7 @@ window.addEventListener('load', async function () {
     let passcode = profileData["records"]["0"]["Passcode__c"];
     let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
     let email = profileData["records"]["0"]["Email"];
-    console.log(name);
-    document.getElementById('firstName').value = String(name).split("")[0];
-    console.log(name);
+    document.getElementById('firstName').value = String(name).split(" ")[0];
+    console.log(String(name).split(" ")[0]);
 
 });
