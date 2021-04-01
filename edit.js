@@ -36,8 +36,8 @@ window.addEventListener('load', async function () {
 
     document.getElementById('firstName').value = String(profileData["records"]["0"]["Name"]).split(" ")[0];
     document.getElementById('lastName').value = String(profileData["records"]["0"]["Name"]).split(" ")[1];
-    document.getElementById('lastName').value = profileData["records"]["0"]["MobilePhone"];
-    document.getElementById('lastName').value = profileData["records"]["0"]["Email"];
+    document.getElementById('mobile').value = profileData["records"]["0"]["MobilePhone"];
+    document.getElementById('email').value = profileData["records"]["0"]["Email"];
 
     console.log(String(name).split(" ")[0]);
 
