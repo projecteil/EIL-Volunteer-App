@@ -131,7 +131,7 @@ async function editProfile() {
     // let password = document.getElementById("Password").value;
     // const emailValidator = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    window.location.replace("./edit.html");
+    //window.location.replace("./edit.html");
 
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=OldMonk1234auRJQemePs9mac0guNA7ZrFa", {
         method: "POST",
@@ -167,6 +167,6 @@ async function editProfile() {
     let passcode = profileData["records"]["0"]["Passcode__c"];
     let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
     let email = profileData["records"]["0"]["Email"];
-
+    console.log(name);
     document.getElementById('firstName').value = name;
 }
