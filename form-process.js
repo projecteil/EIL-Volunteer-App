@@ -82,6 +82,7 @@ async function processForm() {
 
 async function processLogIn() {
 
+    let accessToken = await getAccessToken();
     let loader = document.getElementById('loader');
     let formDiv = document.getElementById('msform');
     let errorMsg = document.getElementById('errormsg');
@@ -102,7 +103,7 @@ async function processLogIn() {
             method: "GET",
             headers: {
                 "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + getAccessToken()
+                "Authorization": "Bearer " + accessToken,
             }
         });
 
