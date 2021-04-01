@@ -1,3 +1,6 @@
+let accessToken = "";
+let data = "";
+
 window.onload = async function () {
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=OldMonk1234auRJQemePs9mac0guNA7ZrFa", {
         method: "POST",
@@ -9,8 +12,8 @@ window.onload = async function () {
         },
     });
 
-    let data = await response.json();
-    let accessToken = data["access_token"];
+    data = await response.json();
+    accessToken = data["access_token"];
     console.log(accessToken);
 }
 
