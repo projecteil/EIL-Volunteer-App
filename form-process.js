@@ -169,6 +169,7 @@ async function editProfile() {
     console.log(name);
     addEventListener("load", function () {
         document.getElementById('firstName').value = name;
+        console.log(name);
     })
 
 }
