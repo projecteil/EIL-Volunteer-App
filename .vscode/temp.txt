@@ -1,0 +1,9 @@
+Select Name FROM Campaign
+
+
+Date of Birth
+Passcode
+
+Do not COntact
+Email Opt Out
+Do not Call
