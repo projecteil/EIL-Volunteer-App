@@ -23,14 +23,14 @@ window.addEventListener('load', async function () {
     profileData = await responseGetProfile.json();
     setTimeout(console.log(profileData), 8000);
     //let name = profileData["records"]["0"]["Name"];
-    let address = profileData["records"]["0"]["Address__c"];
-    let birthDate = profileData["records"]["0"]["Birthdate"];
-    let description = profileData["records"]["0"]["Description"];
+    //let address = profileData["records"]["0"]["Address__c"];
+    //let birthDate = profileData["records"]["0"]["Birthdate"];
+    //let description = profileData["records"]["0"]["Description"];
     let doNotCall = profileData["records"]["0"]["DoNotCall"];
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let hasOptedOutOfEmail = profileData["records"]["0"]["HasOptedOutOfEmail"];
     //let mobilePhone = profileData["records"]["0"]["MobilePhone"];
-    let passcode = profileData["records"]["0"]["Passcode__c"];
+    //let passcode = profileData["records"]["0"]["Passcode__c"];
     let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
     //let email = profileData["records"]["0"]["Email"];
 
@@ -38,6 +38,10 @@ window.addEventListener('load', async function () {
     document.getElementById('lastName').value = String(profileData["records"]["0"]["Name"]).split(" ")[1];
     document.getElementById('mobile').value = profileData["records"]["0"]["MobilePhone"];
     document.getElementById('email').value = profileData["records"]["0"]["Email"];
+    document.getElementById('password').value = profileData["records"]["0"]["Passcode__c"];
+    document.getElementById('dateOfBirth').value = profileData["records"]["0"]["Birthdate"];
+    document.getElementById('description').value = profileData["records"]["0"]["Description"];
+    document.getElementById('street').value = profileData["records"]["0"]["Address__c"];
 
     console.log(String(name).split(" ")[0]);
 
