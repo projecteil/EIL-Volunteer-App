@@ -143,7 +143,7 @@ async function editProfile() {
 
     let data = await response.json();
 
-    let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+MailingAddress,+GW_Volunteers__Volunteer_Skills__c+FROM+Contact+Where+Email+=+'ansh45@gmail.com'", {
+    let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c+FROM+Contact+Where+Email+=+'ansh45@gmail.com'", {
         method: "GET",
         headers: {
             "Content-type": "application/json;charset=UTF-8",
