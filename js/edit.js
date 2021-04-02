@@ -38,7 +38,7 @@ window.addEventListener('load', async function () {
     document.getElementById('street').value = profileData["records"]["0"]["Address__c"];
     if (doNotCall == true) {
         console.log("true");
-        document.getElementById('doNotCall').value = true;
+        document.getElementById('doNotCall').click();
     } else {
         console.log("false")
     }
