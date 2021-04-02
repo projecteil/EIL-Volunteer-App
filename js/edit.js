@@ -26,7 +26,7 @@ window.addEventListener('load', async function () {
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let hasOptedOutOfEmail = profileData["records"]["0"]["HasOptedOutOfEmail"];
     let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
-    console.log(doNotCall, doNotContact, hasOptedOutOfEmail);
+    console.log(typeof (doNotCall), doNotContact, hasOptedOutOfEmail);
 
     document.getElementById('firstName').value = String(profileData["records"]["0"]["Name"]).split(" ")[0];
     document.getElementById('lastName').value = String(profileData["records"]["0"]["Name"]).split(" ")[1];
