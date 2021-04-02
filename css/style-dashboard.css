@@ -525,3 +525,174 @@ textarea {
 #onlinestatus:focus {
 	outline: none;
 }
+
+/***********************************************Edit Profile Page************************************************/
+::placeholder {
+	color: #7b7e81;
+	opacity: 1;
+	/* Firefox */
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #7b7e81;
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #7b7e81;
+}
+
+textarea:focus,
+input:focus,
+input[type]:focus {
+	box-shadow: 0 0 5px #7b4acb;
+}
+
+textarea {
+	resize: none;
+}
+
+
+
+/* Main body */
+.container {
+	max-width: 800px;
+	background-color: #fff;
+	padding: 2% 2%;
+}
+
+.heading-container {
+	max-width: 800px;
+	background: #8e8e8e;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	border-left: 8px solid black;
+	margin-top: 20px;
+}
+
+.form-heading {
+	padding-left: 2%;
+	font-weight: 600;
+	text-align: left;
+	margin-bottom: 0px !important;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.form__btns {
+	text-align: center;
+}
+
+.form__btns button {
+	min-width: 95px;
+	margin: 24px 15px 0;
+}
+
+.form-control {
+	color: #717171;
+	background-color: #f7f7f7;
+	border-radius: 0;
+}
+
+textarea.form-control {
+	height: 39px;
+}
+
+.form__comments label:not(:first-child) {
+	margin-top: 32px;
+}
+
+.text-small {
+	font-size: 0.8rem;
+}
+
+/************************************************Input Checkbox: On-Off****************************************************/
+.btn-onoff {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.btn-onoff input {
+	display: block;
+	position: absolute;
+	opacity: 0
+}
+
+.btn-onoff span {
+	position: relative;
+	display: block;
+	width: 71px;
+	height: 25px;
+	border-radius: 40px;
+	background: #ccc;
+	border: 1px solid #ccc;
+	-webkit-transition: 400ms;
+	-moz-transition: 400ms;
+	-ms-transition: 400ms;
+	transition: 400ms
+}
+
+.btn-onoff input:checked~span {
+	border: 1px solid #4CAF50;
+	background: #4CAF50
+}
+
+.btn-onoff input~span:before {
+	content: 'Off';
+	display: block;
+	width: 34px;
+	height: 34px;
+	position: absolute;
+	right: 2px;
+	font-size: 14px;
+	font-family: "Arial";
+	font-weight: bold;
+	line-height: 26px;
+	color: #444;
+	padding: 0px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	-ms-transition: 500ms;
+	transition: 500ms
+}
+
+.btn-onoff input:checked~span:before {
+	content: 'On';
+	right: 30px;
+	color: #fff
+}
+
+.btn-onoff input~span:after {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	top: 3px;
+	left: 4px;
+	background: #fff;
+	border-radius: 50%;
+	-webkit-transition: 400ms;
+	-moz-transition: 400ms;
+	-ms-transition: 400ms;
+	transition: 400ms
+}
+
+.btn-onoff:hover input~span:after {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9)
+}
+
+.btn-onoff input:checked~span:after {
+	content: '';
+	left: 51px;
+}
+
+/*End | On-Off Button Design*/
