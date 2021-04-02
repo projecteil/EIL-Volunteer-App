@@ -37,10 +37,10 @@ window.addEventListener('load', async function () {
     document.getElementById('description').value = profileData["records"]["0"]["Description"];
     document.getElementById('street').value = profileData["records"]["0"]["Address__c"];
     if (doNotCall == true) {
-        console.log("true");
+        console.log("True");
         document.getElementById('doNotCall').click();
     } else {
-        console.log("false")
+        console.log("False")
     }
 
     console.log(String(name).split(" ")[0]);
