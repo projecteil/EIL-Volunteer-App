@@ -36,6 +36,12 @@ window.addEventListener('load', async function () {
     document.getElementById('dateOfBirth').value = profileData["records"]["0"]["Birthdate"];
     document.getElementById('description').value = profileData["records"]["0"]["Description"];
     document.getElementById('street').value = profileData["records"]["0"]["Address__c"];
+    if (DoNotCall == true) {
+        console.log("true");
+        document.getElementById('doNotCall').value = true;
+    } else {
+        console.log("false")
+    }
 
     console.log(String(name).split(" ")[0]);
 
