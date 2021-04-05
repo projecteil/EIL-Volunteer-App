@@ -12,7 +12,7 @@ window.addEventListener('load', async function () {
 
     let data = await response.json();
 
-    let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c+FROM+Contact+Where+Email+=+'ansh45@gmail.com'", {
+    let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c,+GW_Volunteers__Volunteer_Notes__c,+GW_Volunteers__Volunteer_Availability__c+FROM+Contact+Where+Email+=+'ansh45@gmail.com'", {
         method: "GET",
         headers: {
             "Content-type": "application/json;charset=UTF-8",
@@ -21,12 +21,13 @@ window.addEventListener('load', async function () {
     });
 
     profileData = await responseGetProfile.json();
-    setTimeout(console.log(profileData), 8000);
+
     let doNotCall = profileData["records"]["0"]["DoNotCall"];
-    let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let hasOptedOutOfEmail = profileData["records"]["0"]["HasOptedOutOfEmail"];
     let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
-    console.log(typeof (doNotCall), doNotContact, hasOptedOutOfEmail);
+    let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
+    let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
+
 
     document.getElementById('firstName').value = String(profileData["records"]["0"]["Name"]).split(" ")[0];
     document.getElementById('lastName').value = String(profileData["records"]["0"]["Name"]).split(" ")[1];
@@ -36,12 +37,18 @@ window.addEventListener('load', async function () {
     document.getElementById('dateOfBirth').value = profileData["records"]["0"]["Birthdate"];
     document.getElementById('description').value = profileData["records"]["0"]["Description"];
     document.getElementById('street').value = profileData["records"]["0"]["Address__c"];
+    document.getElementById('vNotes').value = profileData["records"]["0"]["GW_Volunteers__Volunteer_Notes__c"];
+
     if (doNotCall == true) {
-        console.log("True");
         document.getElementById('doNotCall').click();
-    } else {
-        console.log("False")
     }
+    if (doNotContact == true) {
+        document.getElementById('doNotContact').click();
+    }
+    if (hasOptedOutOfEmail == true) {
+        document.getElementById('doNotEmail').click();
+    }
+
 
     console.log(String(name).split(" ")[0]);
 

@@ -102,10 +102,6 @@
               <input type="text" class="form-control" id="street" placeholder="Street">
             </div><!-- /form-group -->
 
-            <div class="form-group">
-              <label>Volunteer Notes</label>
-              <input type="text" class="form-control" id="vNotes" placeholder="Volunteer Notes">
-            </div><!-- /form-group -->
           </div>
 
           <!--Volunteer Details Form Starts-->
@@ -121,12 +117,80 @@
 
             <div class="form-group">
               <label>Volunteer Skills</label>
-              <input type="text" class="form-control" id="vNotes" placeholder="Volunteer Skills">
+              <div class="form-row">
+
+                <div class="form-group col-md-4">
+                  <label>Manual labour</label>
+                  <label class="btn-onoff">
+                    <input type="checkbox" id="doNotCall" data-onoff="toggle"><span></span>
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Fundraising</label>
+                  <label class="btn-onoff">
+                    <input type="checkbox" id="doNotCall" data-onoff="toggle"><span></span>
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Event Planning&nbsp;&nbsp;&nbsp;</label>
+                  <label class="btn-onoff">
+                    <input type="checkbox" id="doNotCall" data-onoff="toggle"><span></span>
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Landscaping&nbsp;&nbsp;</label>
+                  <label class="btn-onoff">
+                    <input type="checkbox" id="doNotCall" data-onoff="toggle"><span></span>
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Marketing&nbsp;&nbsp;&nbsp;</label>
+                  <label class="btn-onoff">
+                    <input type="checkbox" id="doNotCall" data-onoff="toggle"><span></span>
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Computer Usage</label>
+                  <label class="btn-onoff">
+                    <input type="checkbox" id="doNotCall" data-onoff="toggle"><span></span>
+                  </label>
+                </div>
+              </div>
             </div><!-- /form-group -->
 
             <div class="form-group">
               <label>Volunteer Availability</label>
-              <input type="text" class="form-control" id="vNotes" placeholder="Volunteer Availability">
+              <div class="radio-wrapper">
+                <div class="radio-container">
+                  <ul>
+                    <li>
+                      <input type="radio" id="f-option" name="selector">
+                      <label for="f-option">Weekend</label>
+                      <div class="check"></div>
+                    </li>
+                    <li>
+                      <input type="radio" id="s-option" name="selector">
+                      <label for="s-option">Weekdays</label>
+                      <div class="check"></div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="radio-container">
+                  <ul>
+                    <li>
+                      <input type="radio" id="mor-option" name="vTime">
+                      <label for="mor-option">Morning</label>
+                      <div class="check"></div>
+                    </li>
+                    <li>
+                      <input type="radio" id="aft-option" name="vTime">
+                      <label for="aft-option">Afternoon</label>
+                      <div class="check"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div><!-- /form-group -->
           </div>
 
