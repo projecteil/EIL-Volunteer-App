@@ -1,5 +1,3 @@
-var jsforce = require('jsforce');
-
 async function processForm() {
 
 
