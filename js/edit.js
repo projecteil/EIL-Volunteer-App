@@ -49,7 +49,6 @@ window.addEventListener('load', async function () {
         document.getElementById('doNotEmail').click();
     }
 
-
     console.log(String(name).split(" ")[0]);
 
 });
