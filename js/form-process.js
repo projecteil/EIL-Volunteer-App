@@ -52,7 +52,7 @@ async function processForm() {
         method: "POST",
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin',
+        credentials: 'include',
         headers: {
             "Content-type": "application/json;charset=UTF-8",
             "Access-Control-Allow-Origin": "*",
