@@ -122,7 +122,7 @@ async function processLogIn() {
 
 async function editProfile() {
 
-    console.log(globalVar);
+    //console.log(globalVar);
     // let loader = document.getElementById('loader');
     // let formDiv = document.getElementById('msform');
     // let errorMsg = document.getElementById('errormsg');
