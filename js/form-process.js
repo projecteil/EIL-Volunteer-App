@@ -1,25 +1,5 @@
 async function processForm() {
 
-
-    var conn = new jsforce.Connection({
-        // you can change loginUrl to connect to sandbox or prerelease env.
-        loginUrl: 'https://login.salesforce.com'
-    });
-    conn.login('project2@eilireland.org', 'OldMonk1234', function (err, userInfo) {
-        if (err) {
-            return console.error(err);
-        }
-        // Now you can get the access token and instance URL information.
-        // Save them to establish connection next time.
-        console.log(conn.accessToken);
-        console.log(conn.instanceUrl);
-        // logged in user property
-        console.log("User ID: " + userInfo.id);
-        console.log("Org ID: " + userInfo.organizationId);
-        // ...
-    });
-
-
     let formDiv = document.getElementById('msform');
     let confirmEmailDiv = document.getElementById('emailconfirm');
     let errorMsg = document.getElementById('errormsg');
@@ -42,10 +22,6 @@ async function processForm() {
         dateOfBirth = new Date(dateOfBirth);
         dateOfBirth = dateOfBirth.toISOString();
     }
-
-
-
-
 
 
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=OldMonk1234auRJQemePs9mac0guNA7ZrFa", {
