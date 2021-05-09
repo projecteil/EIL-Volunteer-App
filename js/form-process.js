@@ -94,12 +94,10 @@ async function processLogIn() {
         });
 
         let data = await response.json();
-        console.log(data)
+        console.log(email);
         let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Passcode__c+from+Contact+where+Email+=+'" + email + "'", {
             method: "GET",
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin',
+            mode: 'cors',
             headers: {
                 "Content-type": "application/json;charset=UTF-8",
                 "Authorization": "Bearer " + data["access_token"]
