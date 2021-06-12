@@ -64,8 +64,18 @@ async function processForm() {
         .catch(err => console.log(err));
 }
 
-async function processLogIn() {
+function getCurrentDate() {
+    let currentDate = new Date();
+    var dd = String(currentDate.getDate()).padStart(2, '0');
+    var mm = String(currentDate.getMonth() + 1).padStart(2, '0');
+    var yyyy = currentDate.getFullYear();
+    currentDate = dd + '/' + mm + '/' + yyyy;
+    return currentDate;
+}
 
+async function processLogIn() {
+    let currentDate = getCurrentDate();
+    console.log(currentDate);
     let loader = document.getElementById('loader');
     let formDiv = document.getElementById('msform');
     let errorMsg = document.getElementById('errormsg');
@@ -114,6 +124,20 @@ async function processLogIn() {
             loader.style.cssText = "display:block;";
             console.log("About to redirect.");
             window.location.replace("./dashboard-home.html");
+
+            let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
+                    method: "POST",
+                    mode: 'no-cors', // no-cors, *cors, same-origin
+                    headers: {
+                        "Content-type": "application/json;charset=UTF-8",
+                        "Authorization": "Bearer " + data["access_token"]
+                    },
+                    body: JSON.stringify(contactData),
+                })
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch(err => console.log(err));
+
 
         }
     }

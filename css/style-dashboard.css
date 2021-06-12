@@ -26,7 +26,7 @@ body {
 
 /************************************Top Menubar************************************/
 .top-menubar {
-	background-color: #E9E9EF;
+	background-color: #fff;
 	padding: 10px;
 
 }
@@ -101,6 +101,11 @@ body {
 	text-align: right;
 	width: 100%;
 	height: 30px;
+}
+
+.user-options img {
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .user-options i {

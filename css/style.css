@@ -315,6 +315,14 @@ span.email-confirm-footer {
 	animation: dotAnimation 2.5s infinite;
 }
 
+/**********************************************************Log Out Page**********************************************************/
+.logout-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 180px;
+	color: #707070;
+}
+
 @keyframes dotAnimation {
 
 	0%,
