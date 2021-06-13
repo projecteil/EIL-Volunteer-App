@@ -43,7 +43,14 @@ async function processLogIn() {
     );
     for (let i = 0; i < noOfCampaigns; i++) {
         console.log(campaignResponse["records"][i]);
-        document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
+        if (i == 0)
+            document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
+        else if (i == 1)
+            document.getElementById("headingCampaign2").innerHTML = campaignResponse["records"][i]["Name"];
+        else if (i == 2)
+            document.getElementById("headingCampaign3").innerHTML = campaignResponse["records"][i]["Name"];
+        else if (i == 3)
+            document.getElementById("headingCampaign4").innerHTML = campaignResponse["records"][i]["Name"];
     }
 
 
