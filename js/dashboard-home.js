@@ -36,18 +36,10 @@ async function processLogIn() {
 
     campaignResponse = await campaignData.json();
     console.log(campaignResponse);
-    Object.entries(campaignResponse).forEach(
-        ([key, value]) => {
-            if (key == "records") {
-                Object.entries(campaignResponse["records"]).forEach(
-                    ([key1, value1]) => {
-                        console.log(key1, value1);
+    Object.entries(campaignResponse["records"]).forEach(
+        ([key1, value1]) => {
+            console.log(key1, value1);
 
-                    }
-                );
-
-
-            }
         }
     );
 
