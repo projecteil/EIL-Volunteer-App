@@ -53,7 +53,7 @@ async function processLogIn() {
             loader.style.cssText = "display:block;";
             console.log("About to redirect.");
             setCookie("IsActive", "active", 30);
-            setCookie("Id", "email", 300);
+            setCookie("Id", email, 300);
             window.location.replace("./dashboard-home.html");
 
             let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
