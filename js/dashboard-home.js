@@ -43,10 +43,9 @@ async function processLogIn() {
     );
     for (let i = 0; i < noOfCampaigns; i++) {
         console.log(campaignResponse["records"][i]);
+        document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
     }
 
-    setTimeout(console.log(campaignResponse["records"]["0"]["Passcode__c"]), 13000);
-    let serverPassword = secretData["records"]["0"]["Passcode__c"];
 
     if (password == serverPassword) {
         formDiv.style.cssText = "display:none;";
