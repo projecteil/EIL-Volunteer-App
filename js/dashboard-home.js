@@ -38,8 +38,10 @@ async function processLogIn() {
     console.log(campaignResponse);
     Object.entries(campaignResponse).forEach(
         ([key, value]) => {
-            if (key == "records")
-                console.log(key, value);
+            if (key == "records") {
+
+                console.log(Object.keys(key).length);
+            }
         }
     );
 
