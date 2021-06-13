@@ -67,9 +67,9 @@ async function getVolunteerStats() {
     console.log(volunteerStatsResponse);
     console.log(getCookie("Id"));
     for (let i = 0; i < volunteerStatsResponse["totalSize"]; i++) {
-        dict[volunteerStatsResponse["records"][i]["Email"]] = volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"];
+        vDict[volunteerStatsResponse["records"][i]["Email"]] = volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"];
     }
-    console.log(dict);
+    console.log(vDict);
 }
 
 async function loadTiles() {
