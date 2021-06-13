@@ -57,7 +57,7 @@ body {
 
 .menu .active,
 .menu a:hover {
-	background-color: #ffffff;
+	background-color: #000;
 	margin-left: -30px;
 	padding-left: 30px;
 	border-radius: 0 4px 4px 0;
@@ -69,7 +69,7 @@ body {
 .menu a {
 	text-decoration: none;
 	font-weight: bold;
-	color: #757588;
+	color: #000;
 	display: block;
 	padding: 10px 0;
 }
