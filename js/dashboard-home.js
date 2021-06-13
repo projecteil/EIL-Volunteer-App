@@ -18,7 +18,7 @@ async function processLogIn() {
 
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=Secureit123AYfrE3tYJC7OVZtTEg0hgDkI", {
         method: "POST",
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
             "Content-type": "application/json;charset=UTF-8",
             "Access-Control-Allow-Origin": "*",
@@ -31,7 +31,7 @@ async function processLogIn() {
     console.log(data["access_token"]);
     let campaignData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Name,Type,StartDate,GW_Volunteers__Volunteers_Still_Needed__c,GW_Volunteers__Volunteer_Jobs__c+from+Campaign", {
         method: "GET",
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
             "Content-type": "application/json;charset=UTF-8",
             "Authorization": "Bearer " + data["access_token"]
@@ -48,20 +48,5 @@ async function processLogIn() {
         loader.style.cssText = "display:block;";
         console.log("About to redirect.");
         window.location.replace("./dashboard-home.html");
-
-        let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
-                method: "POST",
-                mode: 'no-cors', // no-cors, *cors, same-origin
-                headers: {
-                    "Content-type": "application/json;charset=UTF-8",
-                    "Authorization": "Bearer " + data["access_token"]
-                },
-                body: JSON.stringify(contactData),
-            })
-            .then(response => response.json())
-            .then(json => console.log(json))
-            .catch(err => console.log(err));
-
-
     }
 }
