@@ -63,7 +63,7 @@ async function loadTiles() {
         mode: 'cors',
         headers: {
             "Content-type": "application/json;charset=UTF-8",
-            "Authorization": "Bearer " + getToken()
+            "Authorization": "Bearer " + await getToken()
         }
     });
 
