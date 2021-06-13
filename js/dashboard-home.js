@@ -47,18 +47,26 @@ async function processLogIn() {
             document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
             document.getElementById("startDateCampaign1").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
             document.getElementById("volunteerNeededCampaign1").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
+            document.getElementById("typeCampaign1").innerHTML = campaignResponse["records"][i]["Type"];
+            document.getElementById("jobsCampaign1").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
         } else if (i == 1) {
             document.getElementById("headingCampaign2").innerHTML = campaignResponse["records"][i]["Name"];
             document.getElementById("startDateCampaign2").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
             document.getElementById("volunteerNeededCampaign2").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
+            document.getElementById("typeCampaign2").innerHTML = campaignResponse["records"][i]["Type"];
+            document.getElementById("jobsCampaign3").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
         } else if (i == 2) {
             document.getElementById("headingCampaign3").innerHTML = campaignResponse["records"][i]["Name"];
             document.getElementById("startDateCampaign3").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
             document.getElementById("volunteerNeededCampaign3").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
+            document.getElementById("typeCampaign3").innerHTML = campaignResponse["records"][i]["Type"];
+            document.getElementById("jobsCampaign3").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
         } else if (i == 3) {
             document.getElementById("headingCampaign4").innerHTML = campaignResponse["records"][i]["Name"];
             document.getElementById("startDateCampaign4").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
             document.getElementById("volunteerNeededCampaign4").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
+            document.getElementById("typeCampaign4").innerHTML = campaignResponse["records"][i]["Type"];
+            document.getElementById("jobsCampaign4").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
         }
     }
 
