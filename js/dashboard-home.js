@@ -36,7 +36,10 @@ async function processLogIn() {
 
     campaignResponse = await campaignData.json();
     console.log(campaignResponse);
-    console.log(campaignResponse.length);
+    Object.entries(campaignResponse).forEach(
+        ([key, value]) => console.log(key, value)
+    );
+
     setTimeout(console.log(campaignResponse["records"]["0"]["Passcode__c"]), 13000);
     let serverPassword = secretData["records"]["0"]["Passcode__c"];
 
