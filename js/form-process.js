@@ -1,8 +1,3 @@
-window.onload = function () {
-    displayCurrentDate();
-
-}
-
 async function processForm() {
 
     let formDiv = document.getElementById('msform');
@@ -69,22 +64,8 @@ async function processForm() {
         .catch(err => console.log(err));
 }
 
-function getCurrentDate() {
-    let currentDate = new Date();
-    var dd = String(currentDate.getDate()).padStart(2, '0');
-    var mm = String(currentDate.getMonth() + 1).padStart(2, '0');
-    var yyyy = currentDate.getFullYear();
-    currentDate = dd + '/' + mm + '/' + yyyy;
-    return currentDate;
-}
-
-function displayCurrentDate() {
-    document.getElementById('currentDateTag').innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;" + getCurrentDate();
-}
 
 async function processLogIn() {
-    let currentDate = getCurrentDate();
-    console.log(currentDate);
     let loader = document.getElementById('loader');
     let formDiv = document.getElementById('msform');
     let errorMsg = document.getElementById('errormsg');
