@@ -46,15 +46,19 @@ async function processLogIn() {
         if (i == 0) {
             document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
             document.getElementById("startDateCampaign1").innerHTML = "Starts on " + campaignResponse["records"][i]["StartDate"];
+            document.getElementById("volunteerNeededCampaign1").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
         } else if (i == 1) {
             document.getElementById("headingCampaign2").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign2").innerHTML = campaignResponse["records"][i]["StartDate"];
+            document.getElementById("startDateCampaign2").innerHTML = "Starts on " + campaignResponse["records"][i]["StartDate"];
+            document.getElementById("volunteerNeededCampaign2").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
         } else if (i == 2) {
             document.getElementById("headingCampaign3").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign3").innerHTML = campaignResponse["records"][i]["StartDate"];
+            document.getElementById("startDateCampaign3").innerHTML = "Starts on " + campaignResponse["records"][i]["StartDate"];
+            document.getElementById("volunteerNeededCampaign3").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
         } else if (i == 3) {
             document.getElementById("headingCampaign4").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign4").innerHTML = campaignResponse["records"][i]["StartDate"];
+            document.getElementById("startDateCampaign4").innerHTML = "Starts on " + campaignResponse["records"][i]["StartDate"];
+            document.getElementById("volunteerNeededCampaign4").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
         }
     }
 
