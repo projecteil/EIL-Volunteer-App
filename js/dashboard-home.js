@@ -39,7 +39,7 @@ async function processLogIn() {
     Object.entries(campaignResponse).forEach(
         ([key, value]) => {
             if (key == "records") {
-                Object.entries(key).forEach(
+                Object.entries(campaignResponse["records"]).forEach(
                     ([key1, value1]) => {
                         console.log(key1, value1);
                     }
