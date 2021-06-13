@@ -36,6 +36,7 @@ async function processLogIn() {
 
     campaignResponse = await campaignData.json();
     console.log(campaignResponse);
+    console.log(Object.keys(campaignResponse).length);
     Object.entries(campaignResponse).forEach(
         ([key, value]) => {
             if (key == "records") {
