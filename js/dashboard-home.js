@@ -92,7 +92,6 @@ async function loadTiles() {
         }
     );
     for (let i = 0; i < noOfCampaigns; i++) {
-        console.log(campaignResponse["records"][i]);
         if (i == 0) {
             document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
             document.getElementById("startDateCampaign1").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
