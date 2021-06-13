@@ -48,13 +48,13 @@ async function processLogIn() {
             document.getElementById("startDateCampaign1").innerHTML = campaignResponse["records"][i]["StartDate"];
         } else if (i == 1) {
             document.getElementById("headingCampaign2").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign1").innerHTML = campaignResponse["records"][i]["StartDate"];
+            document.getElementById("startDateCampaign2").innerHTML = campaignResponse["records"][i]["StartDate"];
         } else if (i == 2) {
             document.getElementById("headingCampaign3").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign1").innerHTML = campaignResponse["records"][i]["StartDate"];
+            document.getElementById("startDateCampaign3").innerHTML = campaignResponse["records"][i]["StartDate"];
         } else if (i == 3) {
             document.getElementById("headingCampaign4").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign1").innerHTML = campaignResponse["records"][i]["StartDate"];
+            document.getElementById("startDateCampaign4").innerHTML = campaignResponse["records"][i]["StartDate"];
         }
     }
 
