@@ -53,7 +53,7 @@ async function getToken() {
 }
 
 async function getVolunteerStats() {
-    let vDict = {};
+    let vArray = [];
     let volunteerStats = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+GW_Volunteers__Volunteer_Hours__c,email+from+Contact+where+GW_Volunteers__Volunteer_Status__c+=+'active'", {
         method: "GET",
         mode: 'cors',
@@ -67,14 +67,18 @@ async function getVolunteerStats() {
     console.log(volunteerStatsResponse);
     console.log(getCookie("Id"));
     for (let i = 0; i < volunteerStatsResponse["totalSize"]; i++) {
-        vDict[volunteerStatsResponse["records"][i]["Email"]] = volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"];
+        vArray.push([volunteerStatsResponse["records"][i]["Email"], volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"]]);
     }
-    console.log(vDict);
+    console.log(vArray);
+    vArray.sort();
+    console.log(vArray);
 }
 
 async function loadTiles() {
     let currentDate = getCurrentDate();
+    let noOfCampaigns = 0;
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
+
     let campaignData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Name,Type,StartDate,GW_Volunteers__Volunteers_Still_Needed__c,GW_Volunteers__Volunteer_Jobs__c+from+Campaign+Where+IsActive+=+True+And+EndDate+>=" + currentDate, {
         method: "GET",
         mode: 'cors',
@@ -85,12 +89,12 @@ async function loadTiles() {
     });
 
     campaignResponse = await campaignData.json();
-    let noOfCampaigns = 0;
     Object.entries(campaignResponse["records"]).forEach(
         ([key1, value1]) => {
             noOfCampaigns = noOfCampaigns + 1;
         }
     );
+
     for (let i = 0; i < noOfCampaigns; i++) {
         if (i == 0) {
             document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
@@ -117,13 +121,5 @@ async function loadTiles() {
             document.getElementById("typeCampaign4").innerHTML = campaignResponse["records"][i]["Type"];
             document.getElementById("jobsCampaign4").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
         }
-    }
-
-
-    if (password == serverPassword) {
-        formDiv.style.cssText = "display:none;";
-        loader.style.cssText = "display:block;";
-        console.log("About to redirect.");
-        window.location.replace("./dashboard-home.html");
     }
 }
