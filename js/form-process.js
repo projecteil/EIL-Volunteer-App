@@ -1,3 +1,8 @@
+window.onload = function () {
+    displayCurrentDate();
+
+}
+
 async function processForm() {
 
     let formDiv = document.getElementById('msform');
@@ -73,6 +78,10 @@ function getCurrentDate() {
     return currentDate;
 }
 
+function displayCurrentDate() {
+    document.getElementById('currentDateTag').innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;" + getCurrentDate();
+}
+
 async function processLogIn() {
     let currentDate = getCurrentDate();
     console.log(currentDate);
@@ -84,7 +93,6 @@ async function processLogIn() {
     const emailValidator = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (email == "") {
-        console.log("Empty");
         errorMsg.innerHTML = "Email can't be empty";
     } else if (!emailValidator.test(String(email).toLowerCase())) {
         errorMsg.innerHTML = "Please enter the correct email ID";
