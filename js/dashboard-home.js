@@ -63,7 +63,7 @@ async function getVolunteerStats() {
     });
 
     volunteerStatsResponse = await volunteerStats.json();
-    console.log(volunteerStatsResponse);
+    console.log(volunteerStatsResponse["totalSize"]);
 
 }
 
