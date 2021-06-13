@@ -76,7 +76,6 @@ async function getVolunteerStats() {
         }
 
     }
-    console.log(j);
 }
 
 async function loadTiles() {
