@@ -41,7 +41,9 @@ async function processLogIn() {
             noOfCampaigns = noOfCampaigns + 1;
         }
     );
-    console.log(noOfCampaigns);
+    for (let i = 0; i < noOfCampaigns; i++) {
+        console.log(campaignResponse["records"][i]);
+    }
 
     setTimeout(console.log(campaignResponse["records"]["0"]["Passcode__c"]), 13000);
     let serverPassword = secretData["records"]["0"]["Passcode__c"];
