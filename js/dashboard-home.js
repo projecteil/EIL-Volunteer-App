@@ -41,7 +41,13 @@ async function processLogIn() {
             if (key == "records") {
                 Object.entries(campaignResponse["records"]).forEach(
                     ([key1, value1]) => {
-                        console.log(key1, value1);
+                        console.log(
+                            campaignResponse["records"]["GW_Volunteers__Volunteer_Jobs__c"],
+                            campaignResponse["records"]["GW_Volunteers__Volunteers_Still_Needed__c"],
+                            campaignResponse["records"]["Name"],
+                            campaignResponse["records"]["StartDate"],
+                            campaignResponse["records"]["Type"]);
+
                     }
                 );
 
