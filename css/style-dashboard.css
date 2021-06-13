@@ -37,7 +37,7 @@ body {
 .sidebar {
 	box-sizing: border-box;
 	width: 200px;
-	background-color: #E9E9EF;
+	background-color: #fff;
 	height: 900px;
 	padding: 25px;
 	display: inline-block;
