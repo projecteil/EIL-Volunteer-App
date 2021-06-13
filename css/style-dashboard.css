@@ -976,4 +976,5 @@ textarea.form-control {
 .upcomingHeadingsContainer {
 	display: flex;
 	justify-content: space-between;
+	color: #525252;
 }
