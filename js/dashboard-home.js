@@ -64,14 +64,13 @@ async function getVolunteerStats() {
     });
 
     volunteerStatsResponse = await volunteerStats.json();
-    console.log(volunteerStatsResponse);
     console.log(getCookie("Id"));
     for (let i = 0; i < volunteerStatsResponse["totalSize"]; i++) {
         vArray.push([volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"], volunteerStatsResponse["records"][i]["Email"]]);
     }
-    console.log(vArray);
     vArray.sort();
     console.log(vArray);
+    console.log(vArray[0][1]);
 }
 
 async function loadTiles() {
