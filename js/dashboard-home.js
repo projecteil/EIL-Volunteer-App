@@ -64,6 +64,11 @@ async function getVolunteerStats() {
 
     volunteerStatsResponse = await volunteerStats.json();
     console.log(volunteerStatsResponse["totalSize"]);
+    console.log(getCookie("Id"));
+    for (let i = 0; i < volunteerStatsResponse["totalSize"]; i++) {
+
+    }
+
 
 }
 
