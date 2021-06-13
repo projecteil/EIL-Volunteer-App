@@ -47,7 +47,8 @@ async function processForm() {
         "Email": email,
         "Passcode__c": password,
         "Birthdate": dateOfBirth,
-        "AccountId": "0011t00000ppMtOAAU"
+        "AccountId": "0011t00000ppMtOAAU",
+        "GW_Volunteers__Volunteer_Status__c	": 'Active'
     }
 
     let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
