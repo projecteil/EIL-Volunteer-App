@@ -1,6 +1,6 @@
 window.onload = function () {
     processLogIn();
-    if (getCookie("IsActive") == null || getCookie("IsActive") == " ") {
+    if (getCookie("IsActive") == null || getCookie("IsActive") == "") {
         console.log("Cookie Not Present");
     } else {
         console.log(getCookie("IsActive"));
