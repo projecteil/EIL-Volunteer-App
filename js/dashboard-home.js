@@ -48,14 +48,11 @@ async function getToken() {
     });
 
     let data = await response.json();
-    console.log(data["access_token"]);
     return await data["access_token"];
 }
 
 async function loadTiles() {
     let currentDate = getCurrentDate();
-    let token = getToken();
-    console.log("Inside Load toles", token);
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
     let campaignData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Name,Type,StartDate,GW_Volunteers__Volunteers_Still_Needed__c,GW_Volunteers__Volunteer_Jobs__c+from+Campaign+Where+IsActive+=+True+And+EndDate+>=" + currentDate, {
         method: "GET",
