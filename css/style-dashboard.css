@@ -977,4 +977,6 @@ textarea.form-control {
 	display: flex;
 	justify-content: space-between;
 	color: #525252;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
