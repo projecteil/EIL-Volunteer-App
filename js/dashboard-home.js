@@ -48,6 +48,7 @@ async function getToken() {
     });
 
     let data = await response.json();
+    console.log(data["access_token"]);
     return data["access_token"];
 }
 
