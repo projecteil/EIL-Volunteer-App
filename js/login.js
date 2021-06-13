@@ -1,3 +1,10 @@
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 async function processLogIn() {
     let loader = document.getElementById('loader');
     let formDiv = document.getElementById('msform');
@@ -45,6 +52,7 @@ async function processLogIn() {
             formDiv.style.cssText = "display:none;";
             loader.style.cssText = "display:block;";
             console.log("About to redirect.");
+            setCookie("IsActive", "active", 30);
             window.location.replace("./dashboard-home.html");
 
             let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
