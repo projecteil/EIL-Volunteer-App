@@ -12,7 +12,8 @@ function getCurrentDate() {
 }
 
 async function processLogIn() {
-    document.getElementById("currentDateTag").innerHTML = getCurrentDate();
+    let currentDate = getCurrentDate();
+    document.getElementById("currentDateTag").innerHTML = currentDate;
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=Secureit123AYfrE3tYJC7OVZtTEg0hgDkI", {
         method: "POST",
         mode: 'cors',
