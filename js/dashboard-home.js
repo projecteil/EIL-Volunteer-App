@@ -1,6 +1,7 @@
 window.onload = function () {
     checkSessionValidity();
     loadTiles();
+    getVolunteerStats();
 }
 
 function checkSessionValidity() {
@@ -49,6 +50,21 @@ async function getToken() {
 
     let data = await response.json();
     return await data["access_token"];
+}
+
+async function getVolunteerStats() {
+    let volunteerStats = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+GW_Volunteers__Volunteer_Hours__c,Name+from+Contact+where+GW_Volunteers__Volunteer_Status__c+=+'active'", {
+        method: "GET",
+        mode: 'cors',
+        headers: {
+            "Content-type": "application/json;charset=UTF-8",
+            "Authorization": "Bearer " + await getToken()
+        }
+    });
+
+    volunteerStatsResponse = await volunteerStats.json();
+    console.log(volunteerStatsResponse);
+
 }
 
 async function loadTiles() {
