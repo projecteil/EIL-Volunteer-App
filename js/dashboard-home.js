@@ -54,7 +54,10 @@ async function getToken() {
 
 async function getVolunteerStats() {
     let vArray = [];
+    let realActiveCount = 0;
+    let position = 0;
     let emailId = getCookie("Id");
+
     let volunteerStats = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+GW_Volunteers__Volunteer_Hours__c,email+from+Contact+where+GW_Volunteers__Volunteer_Status__c+=+'active'", {
         method: "GET",
         mode: 'cors',
@@ -69,14 +72,18 @@ async function getVolunteerStats() {
         vArray.push([volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"], volunteerStatsResponse["records"][i]["Email"]]);
     }
     vArray.sort();
-    console.log(emailId);
     for (let j = 0; j < volunteerStatsResponse["totalSize"]; j++) {
         if (vArray[j][1] == emailId) {
-            console.log(j);
-            break;
+            position = j;
         }
-        console.log(vArray[j][1]);
+        if (vArray[j][0] > 0) {
+            realActiveCount = realActiveCount + 1;
+        }
     }
+    if (position <= realActiveCount)
+        console.log("hh", position);
+    else
+        console.log("rr", realActiveCount + 1);
 }
 
 async function loadTiles() {
