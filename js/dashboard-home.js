@@ -72,6 +72,7 @@ async function getVolunteerStats() {
         vArray.push([volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"], volunteerStatsResponse["records"][i]["Email"]]);
     }
     vArray.sort();
+    console.log(vArray);
     for (let j = 0; j < volunteerStatsResponse["totalSize"]; j++) {
         if (vArray[j][1] == emailId) {
             position = j;
