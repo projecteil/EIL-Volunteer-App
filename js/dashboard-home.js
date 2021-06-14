@@ -56,6 +56,7 @@ async function getVolunteerStats() {
     let vArray = [];
     let realActiveCount = 0;
     let position = 0;
+    let hoursCompleted = 0;
     let emailId = getCookie("Id");
 
     let volunteerStats = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+GW_Volunteers__Volunteer_Hours__c,email+from+Contact+where+GW_Volunteers__Volunteer_Status__c+=+'active'", {
@@ -72,21 +73,20 @@ async function getVolunteerStats() {
         vArray.push([volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"], volunteerStatsResponse["records"][i]["Email"]]);
     }
     vArray.sort();
-    console.log(vArray);
     for (let j = volunteerStatsResponse["totalSize"] - 1; j >= 0; j--) {
         if (vArray[j][1] == emailId) {
             position = volunteerStatsResponse["totalSize"] - j;
-            console.log(position);
+            hoursCompleted = vArray[j][0];
         }
         if (vArray[j][0] > 0) {
             realActiveCount = realActiveCount + 1;
-            console.log(realActiveCount);
         }
     }
     if (position <= realActiveCount)
         console.log("hh", position);
     else
         console.log("rr", realActiveCount + 1);
+    console.log(hoursCompleted);
 }
 
 async function loadTiles() {
