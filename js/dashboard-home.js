@@ -57,10 +57,11 @@ async function getVolunteerStats() {
     let realActiveCount = 0;
     let position = 0;
     let vHoursCompleted = 0;
-    let vRank
+    let vRank = 0;
+    let vManagerNotes = "";
     let emailId = getCookie("Id");
 
-    let volunteerStats = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+GW_Volunteers__Volunteer_Hours__c,email+from+Contact+where+GW_Volunteers__Volunteer_Status__c+=+'active'", {
+    let volunteerStats = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+GW_Volunteers__Volunteer_Hours__c,email,GW_Volunteers__Volunteer_Manager_Notes__c+from+Contact+where+GW_Volunteers__Volunteer_Status__c+=+'active'", {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -71,13 +72,14 @@ async function getVolunteerStats() {
 
     volunteerStatsResponse = await volunteerStats.json();
     for (let i = 0; i < volunteerStatsResponse["totalSize"]; i++) {
-        vArray.push([volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"], volunteerStatsResponse["records"][i]["Email"]]);
+        vArray.push([volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Hours__c"], volunteerStatsResponse["records"][i]["Email"], volunteerStatsResponse["records"][i]["GW_Volunteers__Volunteer_Manager_Notes__c"]]);
     }
     vArray.sort();
     for (let j = volunteerStatsResponse["totalSize"] - 1; j >= 0; j--) {
         if (vArray[j][1] == emailId) {
             position = volunteerStatsResponse["totalSize"] - j;
             vHoursCompleted = vArray[j][0];
+            vManagerNotes = vArray[j][2];
         }
         if (vArray[j][0] > 0) {
             realActiveCount = realActiveCount + 1;
@@ -88,6 +90,21 @@ async function getVolunteerStats() {
     else
         console.log("rr", realActiveCount + 1);
     console.log(vHoursCompleted);
+    console.log(vManagerNotes);
+    if (vHoursCompleted < 5) {
+
+    } else if (vHoursCompleted < 10) {
+        vRank = 1;
+    } else if (vHoursCompleted < 15) {
+        vRank = 2;
+    } else if (vHoursCompleted < 20) {
+        vRank = 3;
+    } else if (vHoursCompleted < 25) {
+        vRank = 4;
+    } else {
+        vRank = 5;
+    }
+
 }
 
 async function loadTiles() {
