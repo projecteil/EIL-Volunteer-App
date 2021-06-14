@@ -849,15 +849,10 @@ textarea.form-control {
 /*****************************************************Upcoming Events Row************************************************/
 .c-tile-list {
 	list-style: none;
-	/* 1 */
-	margin: 0;
-	/* 1 */
+	margin: 0 0 80px 0;
 	padding: 0;
-	/* 1 */
 	display: flex;
-	/* 2 */
 	flex-wrap: wrap;
-	/* 2 */
 }
 
 .c-tile-list__item {
@@ -993,7 +988,7 @@ textarea.form-control {
 	display: inline-block;
 	width: 260px;
 	height: 160px;
-	margin: 10px 5px 10px 5px;
+	margin: 10px 12px 10px 12px;
 	font-size: 32px;
 	font-weight: 600;
 	color: #fff;
