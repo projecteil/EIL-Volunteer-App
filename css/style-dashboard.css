@@ -984,16 +984,16 @@ textarea.form-control {
 /**********************************************************Volunteer Stats******************************************************/
 .stats-container {
 	margin: 0 auto;
-	max-width: 980px;
+	max-width: 1200px;
 }
 
 .panel {
 	box-sizing: border-box;
 	position: relative;
 	display: inline-block;
-	width: 300px;
+	width: 260px;
 	height: 160px;
-	margin: 10px;
+	margin: 10px 5px 10px 5px;
 	font-size: 32px;
 	font-weight: 600;
 	color: #fff;
