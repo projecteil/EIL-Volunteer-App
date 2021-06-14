@@ -86,9 +86,9 @@ async function getVolunteerStats() {
         }
     }
     if (position <= realActiveCount)
-        console.log("hh", position);
+        document.getElementById("rank").innerHTML = position;
     else
-        console.log("rr", realActiveCount + 1);
+        document.getElementById("rank").innerHTML = realActiveCount + 1;
     console.log(vHoursCompleted);
     console.log(vManagerNotes);
     if (vHoursCompleted < 5) {
@@ -104,6 +104,11 @@ async function getVolunteerStats() {
     } else {
         vRank = 5;
     }
+
+    document.getElementById("hoursCompleted").innerHTML = vHoursCompleted;
+    document.getElementById("leaderRank").innerHTML = vRank;
+    document.getElementById("managerNotes").innerHTML = vManagerNotes;
+
 
 }
 
