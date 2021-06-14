@@ -76,9 +76,11 @@ async function getVolunteerStats() {
     for (let j = volunteerStatsResponse["totalSize"] - 1; j >= 0; j--) {
         if (vArray[j][1] == emailId) {
             position = volunteerStatsResponse["totalSize"] - j;
+            console.log(position);
         }
         if (vArray[j][0] > 0) {
             realActiveCount = realActiveCount + 1;
+            console.log(realActiveCount);
         }
     }
     if (position <= realActiveCount)
