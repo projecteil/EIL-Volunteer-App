@@ -92,17 +92,17 @@ async function getVolunteerStats() {
     console.log(vHoursCompleted);
     console.log(vManagerNotes);
     if (vHoursCompleted < 5) {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja'></i></span>Toddler";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-child fa-xs'></i></span>Toddler";
     } else if (vHoursCompleted < 10) {
-        document.getElementById("leaderRank").innerHTML = "<span>2</span> Novice";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fab fa-earlybirds fa-xs'></i></span>Novice";
     } else if (vHoursCompleted < 15) {
-        document.getElementById("leaderRank").innerHTML = "<span>3</span> Swift";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-dragon fa-xs'></i></span>Swift";
     } else if (vHoursCompleted < 20) {
-        document.getElementById("leaderRank").innerHTML = "<span>4</span> Mettler";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-astronaut fa-xs'></i></span>Mettler";
     } else if (vHoursCompleted < 25) {
-        document.getElementById("leaderRank").innerHTML = "<span>5</span> Drifter";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-biking fa-xs'></i></span>Drifter";
     } else {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja'></i></span>Ninja";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja fa-xs'></i></span>Ninja";
     }
 
     document.getElementById("hoursCompleted").innerHTML = "<span>" + vHoursCompleted + "</span> Hours Volunteered";
