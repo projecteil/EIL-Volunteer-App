@@ -92,21 +92,21 @@ async function getVolunteerStats() {
     console.log(vHoursCompleted);
     console.log(vManagerNotes);
     if (vHoursCompleted < 5) {
-        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:10px'><i class='fas fa-child fa-xs'></i></span>Toddler";
+        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fas fa-child fa-xs'></i></span>Toddler";
     } else if (vHoursCompleted < 10) {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fab fa-earlybirds fa-xs'></i></span>Novice";
+        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fab fa-earlybirds fa-xs'></i></span>Novice";
     } else if (vHoursCompleted < 15) {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-dragon fa-xs'></i></span>Swift";
+        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fas fa-dragon fa-xs'></i></span>Swift";
     } else if (vHoursCompleted < 20) {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-astronaut fa-xs'></i></span>Mettler";
+        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fas fa-user-astronaut fa-xs'></i></span>Mettler";
     } else if (vHoursCompleted < 25) {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-biking fa-xs'></i></span>Drifter";
+        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fas fa-biking fa-xs'></i></span>Drifter";
     } else {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja fa-xs'></i></span>Ninja";
+        document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fas fa-user-ninja fa-xs'></i></span>Ninja";
     }
 
     document.getElementById("hoursCompleted").innerHTML = "<span>" + vHoursCompleted + "</span> Hours Volunteered";
-    document.getElementById("managerNotes").innerHTML = "<span>" + vManagerNotes + "</span> Your Feedback";
+    document.getElementById("managerNotes").innerHTML = "<span style='font-size:10px'>" + vManagerNotes + "</span> Your Feedback";
 
 
 }
