@@ -73,7 +73,7 @@ async function getVolunteerStats() {
     }
     vArray.sort();
     console.log(vArray);
-    for (let j = 0; j < volunteerStatsResponse["totalSize"]; j++) {
+    for (let j = volunteerStatsResponse["totalSize"] - 1; j >= 0; j--) {
         if (vArray[j][1] == emailId) {
             position = j;
         }
