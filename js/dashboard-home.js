@@ -85,12 +85,12 @@ async function getVolunteerStats() {
             realActiveCount = realActiveCount + 1;
         }
     }
+
     if (position <= realActiveCount)
         document.getElementById("rank").innerHTML = "<span>" + position + "</span> Volunteer Rank";
     else
         document.getElementById("rank").innerHTML = "<span>" + (realActiveCount + 1) + "</span> Volunteer Rank";
-    console.log(vHoursCompleted);
-    console.log(vManagerNotes);
+
     if (vHoursCompleted < 5) {
         document.getElementById("leaderRank").innerHTML = "<span style='margin-bottom:25px'><i class='fas fa-child fa-xs'></i></span>Toddler";
     } else if (vHoursCompleted < 10) {
@@ -106,9 +106,7 @@ async function getVolunteerStats() {
     }
 
     document.getElementById("hoursCompleted").innerHTML = "<span>" + vHoursCompleted + "</span> Hours Volunteered";
-    document.getElementById("managerNotes").innerHTML = "<span style='font-size:10px'>" + vManagerNotes + "</span> Your Feedback";
-
-
+    document.getElementById("managerNotes").innerHTML = "<span style='font-size:16px'>" + vManagerNotes + "</span> Your Feedback";
 }
 
 async function loadTiles() {
