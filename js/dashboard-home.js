@@ -105,7 +105,7 @@ async function getVolunteerStats() {
         vRank = 5;
     }
 
-    document.getElementById("hoursCompleted").innerHTML = vHoursCompleted;
+    document.getElementById("hoursCompleted").innerHTML = "<span>" + vHoursCompleted + "</span> Hours Volunteered";
     document.getElementById("leaderRank").innerHTML = vRank;
     document.getElementById("managerNotes").innerHTML = vManagerNotes;
 
