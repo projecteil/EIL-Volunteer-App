@@ -989,7 +989,7 @@ textarea.form-control {
 	width: 260px;
 	height: 160px;
 	margin: 10px 12px 10px 12px;
-	font-size: 32px;
+	font-size: 30px;
 	font-weight: 600;
 	color: #fff;
 	overflow: hidden;
@@ -999,7 +999,7 @@ textarea.form-control {
 .panel a {
 	position: relative;
 	display: block;
-	padding: 12px 25px 25px 25px;
+	padding: 5px 25px 25px 25px;
 	color: #fff;
 	text-decoration: none;
 	z-index: 2;
