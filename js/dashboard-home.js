@@ -102,7 +102,7 @@ async function getVolunteerStats() {
     } else if (vHoursCompleted < 25) {
         document.getElementById("leaderRank").innerHTML = "<span>5</span> Drifter";
     } else {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja'></i></span><br>Ninja";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja'></i></span>Ninja";
     }
 
     document.getElementById("hoursCompleted").innerHTML = "<span>" + vHoursCompleted + "</span> Hours Volunteered";
