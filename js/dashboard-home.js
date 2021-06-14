@@ -86,28 +86,27 @@ async function getVolunteerStats() {
         }
     }
     if (position <= realActiveCount)
-        document.getElementById("rank").innerHTML = position;
+        document.getElementById("rank").innerHTML = "<span>" + position + "</span> Volunteer Rank";
     else
-        document.getElementById("rank").innerHTML = realActiveCount + 1;
+        document.getElementById("rank").innerHTML = "<span>" + (realActiveCount + 1) + "</span> Volunteer Rank";
     console.log(vHoursCompleted);
     console.log(vManagerNotes);
     if (vHoursCompleted < 5) {
-
+        document.getElementById("leaderRank").innerHTML = "<span>1</span> Toddler";
     } else if (vHoursCompleted < 10) {
-        vRank = 1;
+        document.getElementById("leaderRank").innerHTML = "<span>2</span> Novice";
     } else if (vHoursCompleted < 15) {
-        vRank = 2;
+        document.getElementById("leaderRank").innerHTML = "<span>3</span> Swift";
     } else if (vHoursCompleted < 20) {
-        vRank = 3;
+        document.getElementById("leaderRank").innerHTML = "<span>4</span> Mettler";
     } else if (vHoursCompleted < 25) {
-        vRank = 4;
+        document.getElementById("leaderRank").innerHTML = "<span>5</span> Drifter";
     } else {
-        vRank = 5;
+        document.getElementById("leaderRank").innerHTML = "<span>6</span> Ninja";
     }
 
     document.getElementById("hoursCompleted").innerHTML = "<span>" + vHoursCompleted + "</span> Hours Volunteered";
-    document.getElementById("leaderRank").innerHTML = vRank;
-    document.getElementById("managerNotes").innerHTML = vManagerNotes;
+    document.getElementById("managerNotes").innerHTML = "<span>" + vManagerNotes + "</span> Your Feedback";
 
 
 }
