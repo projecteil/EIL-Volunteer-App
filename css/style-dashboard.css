@@ -999,7 +999,7 @@ textarea.form-control {
 .panel a {
 	position: relative;
 	display: block;
-	padding: 5px 25px 25px 25px;
+	padding: 1px 25px 25px 25px;
 	color: #fff;
 	text-decoration: none;
 	z-index: 2;
