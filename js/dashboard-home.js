@@ -92,7 +92,7 @@ async function getVolunteerStats() {
     console.log(vHoursCompleted);
     console.log(vManagerNotes);
     if (vHoursCompleted < 5) {
-        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja'></i></span> Toddler";
+        document.getElementById("leaderRank").innerHTML = "<span><i class='fas fa-user-ninja'></i></span><br>Toddler";
     } else if (vHoursCompleted < 10) {
         document.getElementById("leaderRank").innerHTML = "<span>2</span> Novice";
     } else if (vHoursCompleted < 15) {
