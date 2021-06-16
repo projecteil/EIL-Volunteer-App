@@ -14,7 +14,7 @@ async function processForm() {
     if (firstName == "") {
         console.log("Please enter valid first name.");
         errorMsg.innerHTML = "Please enter valid first name.";
-        highlightErrorFields(FirstName);
+        highlightErrorFields("FirstName");
     } else if (lastName == "") {
         console.log("Please enter valid last Name.");
         errorMsg.innerHTML = "Please enter valid last name.";
