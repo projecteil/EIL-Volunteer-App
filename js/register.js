@@ -12,41 +12,41 @@ async function processForm() {
     let dateOfBirth = document.getElementById("DateOfBirth").value;
 
     if (firstName == "") {
-        console.log("Please enter valid first name.");
-        errorMsg.innerHTML = "Please enter valid first name.";
+        console.log("Please enter first name.");
+        errorMsg.innerHTML = "Please enter first name.";
         highlightErrorFields("FirstName");
     } else if (lastName == "") {
-        console.log("Please enter valid last Name.");
-        errorMsg.innerHTML = "Please enter valid last name.";
+        console.log("Please enter last Name.");
+        errorMsg.innerHTML = "Please enter last name.";
         highlightErrorFields("LastName");
     } else if (phoneNumber == "") {
-        console.log("Please enter valid phone number.");
-        errorMsg.innerHTML = "Please enter valid phone number.";
+        console.log("Please enter your phone number.");
+        errorMsg.innerHTML = "Please enter your phone number.";
+        highlightErrorFields("PhoneNumber");
+    } else if (phoneNumber.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/) == null || phoneNumber.length > 15 || phoneNumber.length < 9) {
+        console.log("Please enter a valid phone number containing only {0-9,(,),+,-}.");
+        errorMsg.innerHTML = "Please enter a valid phone number containing only {0-9,(,),+,-}.";
         highlightErrorFields("PhoneNumber");
     } else if (email == "") {
-        console.log("Please enter valid email address.");
-        errorMsg.innerHTML = "Please enter valid email address.";
+        console.log("Please enter your email address.");
+        errorMsg.innerHTML = "Please enter your email address.";
+        highlightErrorFields("Email");
+    } else if (email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) == null) {
+        console.log("Please enter a valid email address.");
+        errorMsg.innerHTML = "Please enter a valid email address.";
         highlightErrorFields("Email");
     } else if (dateOfBirth == "") {
         console.log("Please enter valid date of birth.");
         errorMsg.innerHTML = "Please enter valid date of birth.";
         highlightErrorFields("DateOfBirth");
-    } else if (password == "") {
-        console.log("Please enter valid password.");
-        errorMsg.innerHTML = "Please enter valid password.";
-        highlightErrorFields("Password");
-    } else if (phoneNumber.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/) == null || phoneNumber.length > 15 || phoneNumber.length < 9) {
-        console.log("Please enter a valid phone number containing only {0-9,(,),+,-}.");
-        errorMsg.innerHTML = "Please enter a valid phone number containing only {0-9,(,),+,-}.";
-        highlightErrorFields("PhoneNumber");
-    } else if (email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) == null) {
-        console.log("Please enter a valid email address.");
-        errorMsg.innerHTML = "Please enter a valid email address.";
-        highlightErrorFields("Email");
     } else if (dateOfBirth.match(/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/\-]\d{4}$/) == null || dateOfBirth.length != 10) {
         console.log("Please enter a valid date of birth in DD/MM/YYYY format.");
         errorMsg.innerHTML = "Please enter a valid date of birth in DD/MM/YYYY format.";
         highlightErrorFields("DateOfBirth");
+    } else if (password == "") {
+        console.log("Please enter valid password.");
+        errorMsg.innerHTML = "Please enter valid password.";
+        highlightErrorFields("Password");
     } else if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/) == null) {
         console.log("Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.");
         errorMsg.innerHTML = "Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.";
