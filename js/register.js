@@ -14,19 +14,19 @@ async function processForm() {
     if (firstName == "") {
         console.log("Please enter valid first name.");
         errorMsg.innerHTML = "Please enter valid first name.";
-    } else if (lastName = "") {
+    } else if (lastName == "") {
         console.log("Please enter valid last Name.");
         errorMsg.innerHTML = "Please enter valid last name.";
-    } else if (phoneNumber = "") {
+    } else if (phoneNumber == "") {
         console.log("Please enter valid phone number.");
         errorMsg.innerHTML = "Please enter valid phone number.";
-    } else if (dateOfBirth = "") {
+    } else if (dateOfBirth == "") {
         console.log("Please enter valid date of birth.");
         errorMsg.innerHTML = "Please enter valid date of birth.";
-    } else if (email = "") {
+    } else if (email == "") {
         console.log("Please enter valid email address.");
         errorMsg.innerHTML = "Please enter valid email address.";
-    } else if (password = "") {
+    } else if (password == "") {
         console.log("Please enter valid password.");
         errorMsg.innerHTML = "Please enter valid password.";
     } else if (phoneNumber.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/) == null || phoneNumber.length > 14 || phoneNumber.length < 9) {
