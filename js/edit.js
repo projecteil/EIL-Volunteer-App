@@ -1,7 +1,8 @@
 window.addEventListener('load', async function () {
 
-    console.log("Document is loaded, now fetching the data");
-    let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c,+GW_Volunteers__Volunteer_Notes__c,+GW_Volunteers__Volunteer_Availability__c+FROM+Contact+Where+Email+=+'ansh45@gmail.com'", {
+    let email = getCookie("Id");
+    console.log("Document is loaded, now fetching the data for ", email);
+    let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c,+GW_Volunteers__Volunteer_Notes__c,+GW_Volunteers__Volunteer_Availability__c+FROM+Contact+Where+Email=" + email, {
         method: "GET",
         mode: 'cors',
         cache: 'no-cache',
@@ -61,4 +62,20 @@ async function getToken() {
 
     let data = await response.json();
     return await data["access_token"];
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
