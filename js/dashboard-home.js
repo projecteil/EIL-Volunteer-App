@@ -158,3 +158,9 @@ async function loadTiles() {
         }
     }
 }
+
+async function editProfile() {
+
+    window.location.replace("./edit.html");
+
+}
