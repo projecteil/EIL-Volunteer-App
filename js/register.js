@@ -36,16 +36,16 @@ async function processForm() {
         errorMsg.innerHTML = "Please enter a valid email address.";
         highlightErrorFields("Email");
     } else if (dateOfBirth == "") {
-        console.log("Please enter valid date of birth.");
-        errorMsg.innerHTML = "Please enter valid date of birth.";
+        console.log("Please enter the date of birth.");
+        errorMsg.innerHTML = "Please enter the date of birth.";
         highlightErrorFields("DateOfBirth");
     } else if (dateOfBirth.match(/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/\-]\d{4}$/) == null || dateOfBirth.length != 10) {
         console.log("Please enter a valid date of birth in DD/MM/YYYY format.");
         errorMsg.innerHTML = "Please enter a valid date of birth in DD/MM/YYYY format.";
         highlightErrorFields("DateOfBirth");
     } else if (password == "") {
-        console.log("Please enter valid password.");
-        errorMsg.innerHTML = "Please enter valid password.";
+        console.log("Please enter  the password.");
+        errorMsg.innerHTML = "Please enter the password.";
         highlightErrorFields("Password");
     } else if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/) == null) {
         console.log("Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.");
