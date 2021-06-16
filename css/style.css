@@ -358,3 +358,7 @@ span.email-confirm-footer {
 		transform: scale(0.5);
 	}
 }
+
+.remember-container {
+	display: flex;
+}
