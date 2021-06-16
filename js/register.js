@@ -65,7 +65,7 @@ async function processForm() {
 
 function highlightErrorFields(elementId) {
 
-    document.getElementById(elementId).cssText = "border: 1px solid red;";
+    document.getElementById(elementId).style.cssText = "border: 1px solid red";
 }
 
 async function getToken() {
