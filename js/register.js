@@ -12,8 +12,35 @@ async function processForm() {
     let dateOfBirth = document.getElementById("DateOfBirth").value;
 
     if (firstName == "") {
-        console.log("Empty");
-        errorMsg.innerHTML = "First Name can't be empty";
+        console.log("Please enter valid first name.");
+        errorMsg.innerHTML = "Please enter valid first name.";
+    } else if (lastName = "") {
+        console.log("Please enter valid first Name.");
+        errorMsg.innerHTML = "Please enter valid last name.";
+    } else if (phoneNumber = "") {
+        console.log("Please enter valid phone number.");
+        errorMsg.innerHTML = "Please enter valid phone number.";
+    } else if (dateOfBirth = "") {
+        console.log("Please enter valid date of birth.");
+        errorMsg.innerHTML = "Please enter valid date of birth.";
+    } else if (email = "") {
+        console.log("Please enter valid email address.");
+        errorMsg.innerHTML = "Please enter valid email address.";
+    } else if (password = "") {
+        console.log("Please enter valid password.");
+        errorMsg.innerHTML = "Please enter valid password.";
+    } else if (phoneNumber.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/) == null || phoneNumber.length > 14 || phoneNumber.length < 9) {
+        console.log("Please enter a valid phone number containing only {0-9,(,),+,-}.");
+        errorMsg.innerHTML = "Please enter a valid phone number containing only {0-9,(,),+,-}.";
+    } else if (dateOfBirth.match(/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/\-]\d{4}$/) == null || dateOfBirth.length != 10) {
+        console.log("Please enter a valid date of birth in DD/MM/YYYY format.");
+        errorMsg.innerHTML = "Please enter a valid date of birth in DD/MM/YYYY format.";
+    } else if (email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) == null) {
+        console.log("Please enter a valid email address.");
+        errorMsg.innerHTML = "Please enter a valid email address.";
+    } else if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/) == null) {
+        console.log("Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.");
+        errorMsg.innerHTML = "Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.";
     } else {
         formDiv.style.cssText = "display: None";
         confirmEmailDiv.style.cssText = "display: block !important"
@@ -21,14 +48,24 @@ async function processForm() {
         dateOfBirth = dateOfBirth[1] + "/" + dateOfBirth[0] + "/" + dateOfBirth[2];
         dateOfBirth = new Date(dateOfBirth);
         dateOfBirth = dateOfBirth.toISOString();
+        let contactData = {
+            "FirstName": firstName,
+            "LastName": lastName,
+            "MobilePhone": phoneNumber,
+            "Email": email,
+            "Passcode__c": password,
+            "Birthdate": dateOfBirth,
+            "AccountId": "0011t00000ppMtOAAU",
+            "GW_Volunteers__Volunteer_Status__c": 'Active'
+        }
+        registerNow(contactData);
     }
+}
 
-
+async function getToken() {
     let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=Secureit123AYfrE3tYJC7OVZtTEg0hgDkI", {
         method: "POST",
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'include',
+        mode: 'cors',
         headers: {
             "Content-type": "application/json;charset=UTF-8",
             "Access-Control-Allow-Origin": "*",
@@ -36,116 +73,23 @@ async function processForm() {
             "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
         },
     });
-    let data = await response.json();
-    setTimeout(console.log(data), 8000);
-    setTimeout(console.log(data["access_token"]), 13000);
 
-    let contactData = {
-        "FirstName": firstName,
-        "LastName": lastName,
-        "MobilePhone": phoneNumber,
-        "Email": email,
-        "Passcode__c": password,
-        "Birthdate": dateOfBirth,
-        "AccountId": "0011t00000ppMtOAAU",
-        "GW_Volunteers__Volunteer_Status__c": 'Active'
-    }
+    let data = await response.json();
+    return await data["access_token"];
+}
+
+async function registerNow(contactData) {
 
     let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
             method: "POST",
             mode: 'cors', // no-cors, *cors, same-origin
             headers: {
                 "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + data["access_token"]
+                "Authorization": "Bearer " + await getToken()
             },
             body: JSON.stringify(contactData),
         })
         .then(response => response.json())
         .then(json => console.log(json))
         .catch(err => console.log(err));
-}
-
-
-async function processLogIn() {
-    let loader = document.getElementById('loader');
-    let formDiv = document.getElementById('msform');
-    let errorMsg = document.getElementById('errormsg');
-    let email = document.getElementById("Email").value;
-    let password = document.getElementById("Password").value;
-    const emailValidator = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (email == "") {
-        errorMsg.innerHTML = "Email can't be empty";
-    } else if (!emailValidator.test(String(email).toLowerCase())) {
-        errorMsg.innerHTML = "Please enter the correct email ID";
-    } else if (password == "") {
-        errorMsg.innerHTML = "Password can't be empty";
-    } else {
-
-        let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=Secureit123AYfrE3tYJC7OVZtTEg0hgDkI", {
-            method: "POST",
-            mode: 'cors',
-            headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
-            },
-        });
-
-        let data = await response.json();
-        console.log(email);
-        let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Passcode__c+from+Contact+where+Email+=+'" + email + "'", {
-            method: "GET",
-            mode: 'cors',
-            headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + data["access_token"]
-            }
-        });
-
-        secretData = await responseViewContact.json();
-        setTimeout(console.log(secretData), 8000);
-        setTimeout(console.log(secretData["records"]["0"]["Passcode__c"]), 13000);
-        let serverPassword = secretData["records"]["0"]["Passcode__c"];
-
-        if (password == serverPassword) {
-            formDiv.style.cssText = "display:none;";
-            loader.style.cssText = "display:block;";
-            console.log("About to redirect.");
-            window.location.replace("./dashboard-home.html");
-
-            let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
-                    method: "POST",
-                    mode: 'cors', // no-cors, *cors, same-origin
-                    headers: {
-                        "Content-type": "application/json;charset=UTF-8",
-                        "Authorization": "Bearer " + data["access_token"]
-                    },
-                    body: JSON.stringify(contactData),
-                })
-                .then(response => response.json())
-                .then(json => console.log(json))
-                .catch(err => console.log(err));
-
-
-        }
-    }
-
-}
-
-async function editProfile() {
-
-    //console.log(globalVar);
-    // let loader = document.getElementById('loader');
-    // let formDiv = document.getElementById('msform');
-    // let errorMsg = document.getElementById('errormsg');
-    // let email = document.getElementById("Email").value;
-    // let password = document.getElementById("Password").value;
-    // const emailValidator = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    window.location.replace("./edit.html");
-
-
-
 }
