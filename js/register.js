@@ -29,15 +29,15 @@ async function processForm() {
     } else if (password == "") {
         console.log("Please enter valid password.");
         errorMsg.innerHTML = "Please enter valid password.";
-    } else if (phoneNumber.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/) == null || phoneNumber.length > 14 || phoneNumber.length < 9) {
+    } else if (phoneNumber.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/) == null || phoneNumber.length > 15 || phoneNumber.length < 9) {
         console.log("Please enter a valid phone number containing only {0-9,(,),+,-}.");
         errorMsg.innerHTML = "Please enter a valid phone number containing only {0-9,(,),+,-}.";
-    } else if (dateOfBirth.match(/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/\-]\d{4}$/) == null || dateOfBirth.length != 10) {
-        console.log("Please enter a valid date of birth in DD/MM/YYYY format.");
-        errorMsg.innerHTML = "Please enter a valid date of birth in DD/MM/YYYY format.";
     } else if (email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) == null) {
         console.log("Please enter a valid email address.");
         errorMsg.innerHTML = "Please enter a valid email address.";
+    } else if (dateOfBirth.match(/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/\-]\d{4}$/) == null || dateOfBirth.length != 10) {
+        console.log("Please enter a valid date of birth in DD/MM/YYYY format.");
+        errorMsg.innerHTML = "Please enter a valid date of birth in DD/MM/YYYY format.";
     } else if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/) == null) {
         console.log("Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.");
         errorMsg.innerHTML = "Please enter a valid password having minimum eight characters, at least one uppercase letter, one lowercase letter and one number.";
