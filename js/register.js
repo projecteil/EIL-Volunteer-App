@@ -15,7 +15,7 @@ async function processForm() {
         console.log("Please enter valid first name.");
         errorMsg.innerHTML = "Please enter valid first name.";
     } else if (lastName = "") {
-        console.log("Please enter valid first Name.");
+        console.log("Please enter valid last Name.");
         errorMsg.innerHTML = "Please enter valid last name.";
     } else if (phoneNumber = "") {
         console.log("Please enter valid phone number.");
