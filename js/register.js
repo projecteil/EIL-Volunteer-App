@@ -69,6 +69,7 @@ async function processForm() {
 function highlightErrorFields(elementId) {
 
     document.getElementById(elementId).style.cssText = "border: 1px solid red";
+    document.getElementById(elementId).focus();
 }
 
 function resetErrorFields() {
