@@ -23,14 +23,14 @@ async function processForm() {
         console.log("Please enter valid phone number.");
         errorMsg.innerHTML = "Please enter valid phone number.";
         highlightErrorFields("PhoneNumber");
-    } else if (dateOfBirth == "") {
-        console.log("Please enter valid date of birth.");
-        errorMsg.innerHTML = "Please enter valid date of birth.";
-        highlightErrorFields("DateOfBirth");
     } else if (email == "") {
         console.log("Please enter valid email address.");
         errorMsg.innerHTML = "Please enter valid email address.";
         highlightErrorFields("Email");
+    } else if (dateOfBirth == "") {
+        console.log("Please enter valid date of birth.");
+        errorMsg.innerHTML = "Please enter valid date of birth.";
+        highlightErrorFields("DateOfBirth");
     } else if (password == "") {
         console.log("Please enter valid password.");
         errorMsg.innerHTML = "Please enter valid password.";
