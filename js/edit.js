@@ -1,32 +1,19 @@
 window.addEventListener('load', async function () {
-    console.log("Window Loaded");
-    let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=OldMonk1234auRJQemePs9mac0guNA7ZrFa", {
-        method: "POST",
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin',
-        headers: {
-            "Content-type": "application/json;charset=UTF-8",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
-        },
-    });
 
-    let data = await response.json();
-
+    console.log("Document is loaded, now fetching the data");
     let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c,+GW_Volunteers__Volunteer_Notes__c,+GW_Volunteers__Volunteer_Availability__c+FROM+Contact+Where+Email+=+'ansh45@gmail.com'", {
         method: "GET",
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        mode: 'cors',
+        cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
             "Content-type": "application/json;charset=UTF-8",
-            "Authorization": "Bearer " + data["access_token"]
+            "Authorization": "Bearer " + await getToken()
         }
     });
 
     profileData = await responseGetProfile.json();
+    console.log(profileData);
 
     let doNotCall = profileData["records"]["0"]["DoNotCall"];
     let hasOptedOutOfEmail = profileData["records"]["0"]["HasOptedOutOfEmail"];
@@ -59,3 +46,19 @@ window.addEventListener('load', async function () {
     console.log(String(name).split(" ")[0]);
 
 });
+
+async function getToken() {
+    let response = await fetch("https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9fTLmJ60pJ5LcM88X.T4cnlgFI6sTtiU0_tQwwMuyjIocVl289zYxysWrm45Y9JSHF0f55z.1SJoYFpkQ&client_secret=E2D30FFD226F098FDC26D1A0FA58581717B97678E30559C77F55C092B7899361&username=project2@eilireland.org&password=Secureit123AYfrE3tYJC7OVZtTEg0hgDkI", {
+        method: "POST",
+        mode: 'cors',
+        headers: {
+            "Content-type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+        },
+    });
+
+    let data = await response.json();
+    return await data["access_token"];
+}
