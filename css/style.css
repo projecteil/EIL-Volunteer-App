@@ -367,3 +367,24 @@ span.email-confirm-footer {
 	width: 34%;
 	line-height: 1.6;
 }
+
+/******************************************************Cookie Bar*****************************************************************/
+.cookie-bar {
+	color: white;
+	background: gray;
+	padding: 1em;
+}
+
+.cookie-bar-text {
+	max-width: 40em;
+}
+
+.cookie-bar-more {
+	color: white;
+	text-decoration: underline;
+}
+
+
+.content {
+	margin: 1em;
+}
