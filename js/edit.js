@@ -104,7 +104,18 @@ async function saveNow(contactData) {
     });
 
     secretData = await responseViewContact.json();
-    let serverPassword = secretData["records"]["0"]["Id"];
-    console.log(serverPassword);
-    console.log(secretData);
+
+    let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/' + secretData["records"]["0"]["Id"], {
+            method: "PATCH",
+            mode: 'cors', // no-cors, *cors, same-origin
+            headers: {
+                "Content-type": "application/json;charset=UTF-8",
+                "Authorization": "Bearer " + await getToken()
+            },
+            body: JSON.stringify(contactData),
+        })
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+
 }
