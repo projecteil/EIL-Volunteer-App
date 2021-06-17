@@ -380,17 +380,20 @@ span.email-confirm-footer {
 }
 
 .cookie-action button {
-	width: 160px;
-	background: #27AE60;
+	width: 115px;
+	background: #000000;
 	color: white;
 	border: 0 none;
 	cursor: pointer;
-	padding: 10px 5px;
-	margin: 20px 5px 10px 5px;
-	text-transform: uppercase;
+	padding: 7px 5px;
+	margin: 6px 5px -5px 5px;
 	border-radius: 20px;
 	transition: 0.3s ease-in;
-	font-weight: bold;
+}
+
+.cookie-action button:hover {
+	opacity: 0.9;
+	transform: scale(0.98);
 }
 
 .cookie-bar-text {
