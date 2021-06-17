@@ -375,8 +375,14 @@ span.email-confirm-footer {
 	padding: 1em;
 }
 
+.cookie-action {
+	margin-top: 10px;
+}
+
 .cookie-bar-text {
-	max-width: 40em;
+	max-width: 100%;
+	padding-left: 10px;
+	line-height: 1.2;
 }
 
 .cookie-bar-more {
