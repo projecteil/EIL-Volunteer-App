@@ -92,6 +92,7 @@ async function pushToSalesforce() {
 }
 
 async function saveNow(contactData) {
+
     let email = getCookie("Id");
     let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Id+from+Contact+where+Email+=+'" + email + "'", {
         method: "GET",
@@ -106,16 +107,4 @@ async function saveNow(contactData) {
     let serverPassword = secretData["records"]["0"]["Id"];
     console.log(serverPassword);
     console.log(secretData);
-    let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/', {
-            method: "PATCH",
-            mode: 'cors', // no-cors, *cors, same-origin
-            headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer " + await getToken()
-            },
-            body: JSON.stringify(contactData),
-        })
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
 }
