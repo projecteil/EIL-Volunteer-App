@@ -358,4 +358,12 @@ span.email-confirm-footer {
 .remember-container {
 	display: flex;
 	font-size: 12px;
+	white-space: nowrap;
+	justify-content: space-between;
+}
+
+.remember-container span {
+	display: inline-flex;
+	width: 34%;
+	line-height: 1.6;
 }
