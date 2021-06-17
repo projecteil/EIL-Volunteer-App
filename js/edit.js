@@ -79,3 +79,19 @@ function getCookie(cname) {
     }
     return "";
 }
+
+async function pushToSalesforce() {
+    let contactData = {
+        "FirstName": document.getElementById('firstName').value,
+        "LastName": document.getElementById('lastName').value,
+        "MobilePhone": document.getElementById('mobile').value,
+        "Email": document.getElementById('email').value,
+        "Passcode__c": document.getElementById('password').value,
+        "Birthdate": document.getElementById('dateOfBirth').value,
+        "Description": document.getElementById('description').value,
+        "Address__c": document.getElementById('street').value,
+        "AccountId": "0011t00000ppMtOAAU",
+    }
+    console.log(contactData);
+    let abc = "document.getElementById('vNotes').value; document.getElementById('doNotCall'); document.getElementById('doNotContact'); document.getElementById('doNotEmail').click()";
+}
