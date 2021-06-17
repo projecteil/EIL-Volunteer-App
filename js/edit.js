@@ -28,8 +28,9 @@ window.addEventListener('load', async function () {
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
     console.log(volunteerAvailability);
-
+    console.log("before if");
     if (volunteerSkills.search("Manual labor") > -1) {
+        console.log("inside if");
         document.getElementById("manualLabour").click();
     }
     if (volunteerSkills.search("Marketing") > -1) {
