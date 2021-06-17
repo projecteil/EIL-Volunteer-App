@@ -379,6 +379,20 @@ span.email-confirm-footer {
 	margin-top: 10px;
 }
 
+.cookie-action button {
+	width: 160px;
+	background: #27AE60;
+	color: white;
+	border: 0 none;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 20px 5px 10px 5px;
+	text-transform: uppercase;
+	border-radius: 20px;
+	transition: 0.3s ease-in;
+	font-weight: bold;
+}
+
 .cookie-bar-text {
 	max-width: 100%;
 	padding-left: 10px;
