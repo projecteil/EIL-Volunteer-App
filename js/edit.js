@@ -1,5 +1,4 @@
 window.addEventListener('load', async function () {
-
     let email = getCookie("Id");
     console.log("Document is loaded, now fetching the data for ", email);
     let responseGetProfile = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=Select+Name,+Birthdate,+Description,+Passcode__c,+Email,+MobilePhone,+HasOptedOutOfEmail,+DoNotCall,+npsp__Do_Not_Contact__c,+Address__c,+GW_Volunteers__Volunteer_Skills__c,+GW_Volunteers__Volunteer_Notes__c,+GW_Volunteers__Volunteer_Availability__c+FROM+Contact+Where+Email='" + email + "'", {
@@ -14,13 +13,9 @@ window.addEventListener('load', async function () {
     });
 
     profileData = await responseGetProfile.json();
-    console.log(profileData);
 
     let doNotCall = profileData["records"]["0"]["DoNotCall"];
     let hasOptedOutOfEmail = profileData["records"]["0"]["HasOptedOutOfEmail"];
-    let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
-    let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
-    let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
     document.getElementById('firstName').value = String(profileData["records"]["0"]["Name"]).split(" ")[0];
     document.getElementById('lastName').value = String(profileData["records"]["0"]["Name"]).split(" ")[1];
     document.getElementById('mobile').value = profileData["records"]["0"]["MobilePhone"];
@@ -30,7 +25,10 @@ window.addEventListener('load', async function () {
     document.getElementById('description').value = profileData["records"]["0"]["Description"];
     document.getElementById('street').value = profileData["records"]["0"]["Address__c"];
     document.getElementById('vNotes').value = profileData["records"]["0"]["GW_Volunteers__Volunteer_Notes__c"];
-
+    let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
+    let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
+    console.log(volunteerSkills);
+    console.log(volunteerAvailability);
     if (doNotCall == true) {
         document.getElementById('doNotCall').click();
     }
@@ -104,9 +102,6 @@ async function saveNow(contactData) {
     });
 
     secretData = await responseViewContact.json();
-    console.log(secretData["records"]["0"]["Id"]);
-    let uri = 'https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/' + secretData["records"]["0"]["Id"] + '/';
-    console.log(uri);
     let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/' + secretData["records"]["0"]["Id"] + '/', {
             method: "PATCH",
             mode: 'cors', // no-cors, *cors, same-origin
@@ -119,5 +114,4 @@ async function saveNow(contactData) {
         .then(response => response.json())
         .then(json => console.log(json))
         .catch(err => console.log(err));
-
 }
