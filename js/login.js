@@ -69,3 +69,8 @@ async function processLogIn() {
         }
     }
 }
+
+function closeBanner() {
+    document.getElementById("cookieBanner").innerHTML = "";
+    document.getElementById("cookieBanner").style.cssText = "display:none";
+}
