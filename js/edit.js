@@ -21,9 +21,6 @@ window.addEventListener('load', async function () {
     let doNotContact = profileData["records"]["0"]["npsp__Do_Not_Contact__c"];
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
-    console.log(volunteerSkills);
-    console.log(volunteerAvailability);
-
     document.getElementById('firstName').value = String(profileData["records"]["0"]["Name"]).split(" ")[0];
     document.getElementById('lastName').value = String(profileData["records"]["0"]["Name"]).split(" ")[1];
     document.getElementById('mobile').value = profileData["records"]["0"]["MobilePhone"];
@@ -43,9 +40,6 @@ window.addEventListener('load', async function () {
     if (hasOptedOutOfEmail == true) {
         document.getElementById('doNotEmail').click();
     }
-
-    console.log(String(name).split(" ")[0]);
-
 });
 
 async function getToken() {
@@ -93,5 +87,22 @@ async function pushToSalesforce() {
         "AccountId": "0011t00000ppMtOAAU",
     }
     console.log(contactData);
+    saveNow(contactData);
     let abc = "document.getElementById('vNotes').value; document.getElementById('doNotCall'); document.getElementById('doNotContact'); document.getElementById('doNotEmail').click()";
+}
+
+async function saveNow(contactData) {
+
+    let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact', {
+            method: "PATCH",
+            mode: 'cors', // no-cors, *cors, same-origin
+            headers: {
+                "Content-type": "application/json;charset=UTF-8",
+                "Authorization": "Bearer " + await getToken()
+            },
+            body: JSON.stringify(contactData),
+        })
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
 }
