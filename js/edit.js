@@ -105,6 +105,8 @@ async function saveNow(contactData) {
 
     secretData = await responseViewContact.json();
     console.log(secretData["records"]["0"]["Id"]);
+    let uri = 'https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/' + secretData["records"]["0"]["Id"] + '/';
+    console.log(uri);
     let responseCreateContact = await fetch('https://eilireland.my.salesforce.com/services/data/v25.0/sobjects/Contact/' + secretData["records"]["0"]["Id"] + '/', {
             method: "PATCH",
             mode: 'cors', // no-cors, *cors, same-origin
