@@ -370,8 +370,8 @@ span.email-confirm-footer {
 
 /******************************************************Cookie Bar*****************************************************************/
 .cookie-bar {
-	color: white;
-	background: gray;
+	color: #ffffff;
+	background: rgb(39 174 96);
 	padding: 1em;
 }
 
