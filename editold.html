@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Volunteer Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style-dashboard.css">
   <script src="https://kit.fontawesome.com/58237fbc2d.js" crossorigin="anonymous"></script>
 
@@ -16,11 +17,10 @@
       <!--Top Menubar-->
       <div class="top-menubar">
         <div class="user-options">
-          <i id="currentDateTag" class="fas fa-calendar-alt date-top-menubar"></i>
-          <a><img src="img/chat.svg" width="25px" alt="Chat" class="chat-btn action-button"></a>
-          <a><img src="img/notification.svg" width="25px" alt="Notification" class="notification-btn action-button"></a>
-          <a href="./logout.html"><img class="action-button logout-btn" src="img/logout.png" width="25px"
-              alt="Logout"></a>
+          <i class="fas fa-calendar-alt date-top-menubar">&nbsp;18 March</i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-bell"><span class="notification"></span></i>
+          <img src="https://i.postimg.cc/6pC5MzrN/woman.png" alt="LauraF" class="avatar-top">
         </div>
       </div>
 
@@ -40,12 +40,17 @@
         </select>
 
         <ul class="menu">
-          <li class="active"><a href="#"><i class="fas fa-th-large"></i>Home</a></li>
-          <li><a href="#"><i class="fas fa-user"></i>My Events</a></li>
-          <li><a href="#"><i class="fas fa-users"></i>Register Events</a></li>
-          <li><a href="#" onclick="editProfile()"><i class="fas fa-folder-open"></i>Settings</a></li>
+          <li><a href="#"><i class="fas fa-th-large"></i>Home</a></li>
+          <li><a href="#"><i class="fas fa-user"></i>Your Events</a></li>
+          <li><a href="#"><i class="fas fa-users"></i>Upcoming Events</a></li>
+          <li class="active"><a href="#" onclick="editProfile()"><i class="fas fa-folder-open"></i>Edit Profile</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
         </ul>
       </div>
+      <!-- 
+      <div class="title-profile">
+        <h1>Today's Feed</h1>
+      </div> -->
 
       <!--Main Container Starts-->
       <div class="content">
@@ -233,14 +238,13 @@
       <!--Main Container Ends-->
 
     </div>
-
   </div>
 
   <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
   <script src="./js/script.js"></script>
-  <script src="./js/dashboard-home.js"></script>
+  <script src="./js/edit.js"></script>
 </body>
 
 </html>
