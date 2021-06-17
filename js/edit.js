@@ -48,10 +48,18 @@ window.addEventListener('load', async function () {
         document.getElementById("computerUsage").click();
     }
 
-    if (volunteerAvailability.search("Weekdays") > -1) {}
-    if (volunteerAvailability.search("Weekends") > -1) {}
-    if (volunteerAvailability.search("Morning") > -1) {}
-    if (volunteerAvailability.search("Afternoon") > -1) {}
+    if (volunteerAvailability.search("Weekdays") > -1) {
+        document.getElementById("f-option").click();
+    }
+    if (volunteerAvailability.search("Weekends") > -1) {
+        document.getElementById("s-option").click();
+    }
+    if (volunteerAvailability.search("Morning") > -1) {
+        document.getElementById("mor-option").click();
+    }
+    if (volunteerAvailability.search("Afternoon") > -1) {
+        document.getElementById("aft-option").click();
+    }
 
     if (doNotCall == true) {
         document.getElementById('doNotCall').click();
