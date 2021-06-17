@@ -148,10 +148,6 @@ body {
 	width: 40%;
 }
 
-.email-confirm-footer {
-	font-size: 14px;
-}
-
 span.email-confirm-footer {
 	color: #666;
 	font-size: 11px;
@@ -361,4 +357,5 @@ span.email-confirm-footer {
 
 .remember-container {
 	display: flex;
+	font-size: 12px;
 }
