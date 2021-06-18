@@ -28,6 +28,7 @@ window.addEventListener('load', async function () {
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
     console.log(volunteerSkills);
+    console.log(volunteerSkills.search("Manual labor"));
 
     if (volunteerSkills.search("Manual labor") > -1) {
         document.getElementById("manualLabour").click();
