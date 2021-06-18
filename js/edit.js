@@ -64,9 +64,6 @@ window.addEventListener('load', async function () {
     if (doNotCall == true) {
         document.getElementById('doNotCall').click();
     }
-    if (doNotContact == true) {
-        document.getElementById('doNotContact').click();
-    }
     if (hasOptedOutOfEmail == true) {
         document.getElementById('doNotEmail').click();
     }
