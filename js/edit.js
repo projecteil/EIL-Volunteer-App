@@ -27,28 +27,27 @@ window.addEventListener('load', async function () {
     document.getElementById('vNotes').value = profileData["records"]["0"]["GW_Volunteers__Volunteer_Notes__c"];
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
-    console.log(volunteerSkills);
-    console.log(volunteerSkills.search("Manual labor"));
 
-    if (volunteerSkills.search("Manual labor") > -1) {
-        document.getElementById("manualLabour").click();
+    if (volunteerSkills == null) {
+        if (volunteerSkills.search("Manual labor") > -1) {
+            document.getElementById("manualLabour").click();
+        }
+        if (volunteerSkills.search("Marketing") > -1) {
+            document.getElementById("marketing").click();
+        }
+        if (volunteerSkills.search("Fundraising") > -1) {
+            document.getElementById("fundraising").click();
+        }
+        if (volunteerSkills.search("Event Planning") > -1) {
+            document.getElementById("eventPlanning").click();
+        }
+        if (volunteerSkills.search("Landscaping") > -1) {
+            document.getElementById("landscaping").click();
+        }
+        if (volunteerSkills.search("Computer usage") > -1) {
+            document.getElementById("computerUsage").click();
+        }
     }
-    if (volunteerSkills.search("Marketing") > -1) {
-        document.getElementById("marketing").click();
-    }
-    if (volunteerSkills.search("Fundraising") > -1) {
-        document.getElementById("fundraising").click();
-    }
-    if (volunteerSkills.search("Event Planning") > -1) {
-        document.getElementById("eventPlanning").click();
-    }
-    if (volunteerSkills.search("Landscaping") > -1) {
-        document.getElementById("landscaping").click();
-    }
-    if (volunteerSkills.search("Computer usage") > -1) {
-        document.getElementById("computerUsage").click();
-    }
-
     if (volunteerAvailability.search("Weekdays") > -1) {
         document.getElementById("f-option").click();
     }
