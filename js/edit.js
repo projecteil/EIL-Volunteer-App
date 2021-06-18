@@ -138,7 +138,7 @@ async function pushToSalesforce() {
         "GW_Volunteers__Volunteer_Skills__c": skillList,
         "GW_Volunteers__Volunteer_Notes__c": document.getElementById('vNotes').value,
         "DoNotCall": document.getElementById('doNotCall').checked,
-        "HasOptedOutOfEmail": document.getElementById('doNotEmail'),
+        "HasOptedOutOfEmail": document.getElementById('doNotEmail').checked,
         "AccountId": "0011t00000ppMtOAAU",
     }
     console.log(contactData);
