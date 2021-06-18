@@ -165,6 +165,7 @@ async function pushToSalesforce() {
         top: 0,
         behavior: 'smooth'
     });
+    document.getElementById("cookieBanner").style.cssText = "display:block;";
 }
 
 async function saveNow(contactData) {
