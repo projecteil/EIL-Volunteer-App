@@ -128,11 +128,11 @@ async function pushToSalesforce() {
         skillList = skillList.substring(0, skillList.length - 1);
     }
 
-    if (document.getElementById("f-option")) {
-        availabilityList += "Weekends;";
-    }
     if (document.getElementById("s-option")) {
         availabilityList += "Weekdays;";
+    }
+    if (document.getElementById("f-option")) {
+        availabilityList += "Weekends;";
     }
     if (document.getElementById("mor-option")) {
         availabilityList += "Morning;";
