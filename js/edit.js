@@ -27,7 +27,7 @@ window.addEventListener('load', async function () {
     document.getElementById('vNotes').value = profileData["records"]["0"]["GW_Volunteers__Volunteer_Notes__c"];
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
-
+    console.log(volunteerAvailability);
     if (volunteerSkills != null) {
         if (volunteerSkills.search("Manual labor") > -1) {
             document.getElementById("manualLabour").click();
@@ -141,9 +141,7 @@ async function pushToSalesforce() {
         "HasOptedOutOfEmail": document.getElementById('doNotEmail').checked,
         "AccountId": "0011t00000ppMtOAAU",
     }
-    console.log(contactData);
     saveNow(contactData);
-    let abc = "document.getElementById('vNotes').value; document.getElementById('doNotCall'); document.getElementById('doNotContact'); document.getElementById('doNotEmail').click()";
 }
 
 async function saveNow(contactData) {
