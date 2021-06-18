@@ -1101,6 +1101,16 @@ li>input {
 	color: #ffffff;
 	background: rgb(39 174 96);
 	padding: 1em;
+	max-width: 800px;
+	color: #ffffff;
+	background: rgb(39 174 96);
+	max-width: 800px;
+	padding: 1% 2% 0% 2%;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	border-left: 8px solid black;
+	margin-top: 20px;
 }
 
 .cookie-action {
@@ -1138,4 +1148,25 @@ li>input {
 
 .content {
 	margin: 1em;
+}
+
+div#closeButton {
+	margin-left: 100%;
+}
+
+.mdiv {
+	height: 25px;
+	width: 2px;
+	margin-left: 12px;
+	background-color: black;
+	transform: rotate(45deg);
+	Z-index: 1;
+}
+
+.mm {
+	height: 25px;
+	width: 2px;
+	background-color: black;
+	transform: rotate(90deg);
+	z-index: 2;
 }
