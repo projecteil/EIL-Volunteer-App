@@ -107,23 +107,26 @@ function getCookie(cname) {
 async function pushToSalesforce() {
 
     let skillList = "";
+    if (document.getElementById("computerUsage").checked) {
+        skillList += "Computer usage;";
+    }
     if (document.getElementById("manualLabour").checked) {
-        skillList += "";
+        skillList += "Manual labor;";
     }
-    if (volunteerSkills.search("Marketing") > -1) {
-        document.getElementById("marketing").click();
+    if (document.getElementById("marketing").checked) {
+        skillList += "Marketing;";
     }
-    if (volunteerSkills.search("Fundraising") > -1) {
-        document.getElementById("fundraising").click();
+    if (document.getElementById("fundraising").checked) {
+        skillList += "Fundraising;";
     }
-    if (volunteerSkills.search("Event Planning") > -1) {
-        document.getElementById("eventPlanning").click();
+    if (document.getElementById("eventPlanning").checked) {
+        skillList += "Event Planning;";
     }
-    if (volunteerSkills.search("Landscaping") > -1) {
-        document.getElementById("landscaping").click();
+    if (document.getElementById("landscaping").checked) {
+        skillList += "Landscaping;";
     }
-    if (volunteerSkills.search("Computer usage") > -1) {
-        document.getElementById("computerUsage").click();
+    if (skillList.endsWith(";")) {
+        skillList = skillList.substring(0, skillList.length - 1);
     }
 
     let contactData = {
@@ -135,6 +138,8 @@ async function pushToSalesforce() {
         "Birthdate": document.getElementById('dateOfBirth').value,
         "Description": document.getElementById('description').value,
         "Address__c": document.getElementById('street').value,
+        "GW_Volunteers__Volunteer_Skills__c": skillList,
+        "GW_Volunteers__Volunteer_Notes__c": document.getElementById('vNotes').value,
         "AccountId": "0011t00000ppMtOAAU",
     }
     console.log(contactData);
