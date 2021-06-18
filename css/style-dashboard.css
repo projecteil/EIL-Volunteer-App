@@ -1100,12 +1100,8 @@ li>input {
 .cookie-bar {
 	color: #ffffff;
 	background: rgb(39 174 96);
-	padding: 1em;
 	max-width: 800px;
-	color: #ffffff;
-	background: rgb(39 174 96);
-	max-width: 800px;
-	padding: 1% 2% 0% 2%;
+	padding: 1% 2% 1% 2%;
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
