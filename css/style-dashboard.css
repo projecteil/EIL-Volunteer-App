@@ -601,6 +601,7 @@ textarea {
 }
 
 .form__btns {
+	padding-top: 10px;
 	text-align: center;
 }
 
