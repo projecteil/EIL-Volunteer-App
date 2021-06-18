@@ -128,16 +128,16 @@ async function pushToSalesforce() {
         skillList = skillList.substring(0, skillList.length - 1);
     }
 
-    if (document.getElementById("s-option")) {
+    if (document.getElementById("s-option").checked) {
         availabilityList += "Weekdays;";
     }
-    if (document.getElementById("f-option")) {
+    if (document.getElementById("f-option").checked) {
         availabilityList += "Weekends;";
     }
-    if (document.getElementById("mor-option")) {
+    if (document.getElementById("mor-option").checked) {
         availabilityList += "Morning;";
     }
-    if (document.getElementById("aft-option")) {
+    if (document.getElementById("aft-option").checked) {
         availabilityList += "Afternoon;";
     }
     if (availabilityList.endsWith(";")) {
