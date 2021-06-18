@@ -1111,6 +1111,7 @@ li>input {
 	margin-left: auto;
 	border-left: 8px solid black;
 	margin-top: 20px;
+	display: none;
 }
 
 .cookie-action {
@@ -1151,7 +1152,7 @@ li>input {
 }
 
 div#closeButton {
-	margin-left: 100%;
+	margin-left: 99%;
 }
 
 .mdiv {
