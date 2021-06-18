@@ -108,7 +108,7 @@ async function pushToSalesforce() {
 
     let skillList = "";
     if (document.getElementById("manualLabour").checked) {
-        skillList +=
+        skillList += "";
     }
     if (volunteerSkills.search("Marketing") > -1) {
         document.getElementById("marketing").click();
