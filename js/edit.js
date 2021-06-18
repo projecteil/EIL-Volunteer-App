@@ -27,7 +27,7 @@ window.addEventListener('load', async function () {
     document.getElementById('vNotes').value = profileData["records"]["0"]["GW_Volunteers__Volunteer_Notes__c"];
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
-    console.log(volunteerAvailability);
+
     if (volunteerSkills != null) {
         if (volunteerSkills.search("Manual labor") > -1) {
             document.getElementById("manualLabour").click();
@@ -104,6 +104,8 @@ function getCookie(cname) {
 async function pushToSalesforce() {
 
     let skillList = "";
+    let availabilityList = "";
+
     if (document.getElementById("computerUsage").checked) {
         skillList += "Computer usage;";
     }
@@ -126,6 +128,22 @@ async function pushToSalesforce() {
         skillList = skillList.substring(0, skillList.length - 1);
     }
 
+    if (document.getElementById("f-option")) {
+        availabilityList += "Weekends;";
+    }
+    if (document.getElementById("s-option")) {
+        availabilityList += "Weekdays;";
+    }
+    if (document.getElementById("mor-option")) {
+        availabilityList += "Morning;";
+    }
+    if (document.getElementById("aft-option")) {
+        availabilityList += "Afternoon;";
+    }
+    if (availabilityList.endsWith(";")) {
+        availabilityList = availabilityList.substring(0, availabilityList.length - 1);
+    }
+
     let contactData = {
         "FirstName": document.getElementById('firstName').value,
         "LastName": document.getElementById('lastName').value,
@@ -139,6 +157,7 @@ async function pushToSalesforce() {
         "GW_Volunteers__Volunteer_Notes__c": document.getElementById('vNotes').value,
         "DoNotCall": document.getElementById('doNotCall').checked,
         "HasOptedOutOfEmail": document.getElementById('doNotEmail').checked,
+        "GW_Volunteers__Volunteer_Availability__c": availabilityList,
         "AccountId": "0011t00000ppMtOAAU",
     }
     saveNow(contactData);
