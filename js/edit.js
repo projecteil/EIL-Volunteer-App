@@ -27,7 +27,7 @@ window.addEventListener('load', async function () {
     document.getElementById('vNotes').value = profileData["records"]["0"]["GW_Volunteers__Volunteer_Notes__c"];
     let volunteerSkills = profileData["records"]["0"]["GW_Volunteers__Volunteer_Skills__c"];
     let volunteerAvailability = profileData["records"]["0"]["GW_Volunteers__Volunteer_Availability__c"];
-
+    console.log(volunteerAvailability);
     if (volunteerSkills != null) {
         if (volunteerSkills.search("Manual labor") > -1) {
             document.getElementById("manualLabour").click();
@@ -143,7 +143,7 @@ async function pushToSalesforce() {
     if (availabilityList.endsWith(";")) {
         availabilityList = availabilityList.substring(0, availabilityList.length - 1);
     }
-
+    console.log(availabilityList);
     let contactData = {
         "FirstName": document.getElementById('firstName').value,
         "LastName": document.getElementById('lastName').value,
