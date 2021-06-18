@@ -661,7 +661,7 @@ textarea.form-control {
 }
 
 .btn-onoff input~span:before {
-	content: 'Yes';
+	content: '';
 	display: block;
 	width: 34px;
 	height: 34px;
@@ -682,7 +682,7 @@ textarea.form-control {
 }
 
 .btn-onoff input:checked~span:before {
-	content: 'On';
+	content: 'Yes';
 	right: 30px;
 	color: #fff
 }
