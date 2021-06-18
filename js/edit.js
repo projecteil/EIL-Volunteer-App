@@ -161,6 +161,10 @@ async function pushToSalesforce() {
         "AccountId": "0011t00000ppMtOAAU",
     }
     saveNow(contactData);
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 async function saveNow(contactData) {
