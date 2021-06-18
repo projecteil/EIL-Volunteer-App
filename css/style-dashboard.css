@@ -661,7 +661,7 @@ textarea.form-control {
 }
 
 .btn-onoff input~span:before {
-	content: 'Off';
+	content: 'Yes';
 	display: block;
 	width: 34px;
 	height: 34px;
