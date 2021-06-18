@@ -601,11 +601,11 @@ textarea {
 }
 
 .form__btns {
-	padding-top: 10px;
+	padding-top: 25px;
 	text-align: center;
 }
 
-.form__btns button {
+.form__btns input {
 	min-width: 95px;
 	margin: 24px 15px 0;
 }
