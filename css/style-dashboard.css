@@ -798,6 +798,10 @@ textarea.form-control {
 	-webkit-transition: background 0.25s linear;
 }
 
+li>input {
+	display: none;
+}
+
 #f-option:checked~.check {
 	border: 5px solid #4caf50;
 }
