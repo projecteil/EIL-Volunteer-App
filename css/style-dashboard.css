@@ -1151,12 +1151,12 @@ div#closeButton {
 	margin-left: 99%;
 	cursor: pointer;
 	transition: 0.3s ease-in;
-	opacity: 0.8;
+	opacity: 0.6;
 }
 
 div#closeButton:hover {
 	opacity: 1;
-	transform: scale(0.95);
+	transform: scale(1.2);
 }
 
 .mdiv {
