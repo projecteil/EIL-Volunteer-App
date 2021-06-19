@@ -194,3 +194,7 @@ async function saveNow(contactData) {
         .then(json => console.log(json))
         .catch(err => console.log(err));
 }
+
+function closeBanner() {
+    document.getElementById("cookieBanner").style.cssText = "display:none;";
+}
