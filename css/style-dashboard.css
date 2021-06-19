@@ -1149,6 +1149,14 @@ li>input {
 
 div#closeButton {
 	margin-left: 99%;
+	cursor: pointer;
+	transition: 0.3s ease-in;
+	opacity: 0.8;
+}
+
+div#closeButton:hover {
+	opacity: 1;
+	transform: scale(0.95);
 }
 
 .mdiv {
