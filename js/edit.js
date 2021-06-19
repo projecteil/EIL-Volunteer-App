@@ -198,3 +198,7 @@ async function saveNow(contactData) {
 function closeBanner() {
     document.getElementById("cookieBanner").style.cssText = "display:none;";
 }
+
+function reloadPage() {
+    window.reloadPage();
+}
