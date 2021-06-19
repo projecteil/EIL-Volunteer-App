@@ -200,5 +200,5 @@ function closeBanner() {
 }
 
 function reloadPage() {
-    window.reloadPage();
+    location.reload();
 }
