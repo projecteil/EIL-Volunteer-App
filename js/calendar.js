@@ -138,18 +138,18 @@ const weekdays = [
 ];
 // array meses
 const months = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
 ];
 
 // structure
@@ -170,10 +170,10 @@ let structureCalendar = createElement("div", window.root, {
     }),
     // inside left column
     buttonPrev = createElement("button", headerLeft, {
-        textContent: "Anterior"
+        textContent: "Previous"
     }),
     buttonNext = createElement("button", headerLeft, {
-        textContent: "Siguiente"
+        textContent: "Next"
     }),
     centerTitle = createElement("h1", headerCenter, {
         textContent: months[currentMonth] + " " + currentYear
