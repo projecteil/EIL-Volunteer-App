@@ -128,13 +128,13 @@ let today = new Date(),
 
 // array dias de la semana
 const weekdays = [
-    "Lunes",
-    "Martes",
-    "Miercoles",
-    "Jueves",
-    "Viernes",
-    "Sabado",
-    "Domingo"
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
 ];
 // array meses
 const months = [
