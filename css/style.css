@@ -400,6 +400,7 @@ span.email-confirm-footer {
 	max-width: 100%;
 	padding-left: 10px;
 	line-height: 1.2;
+	font-size: smaller;
 }
 
 .cookie-bar-more {
