@@ -1,0 +1,229 @@
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: #fdfdfd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2d3af7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+}
+
+#structureCalendar header {
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    background: #0917e8;
+    color: #fdfdfd;
+}
+
+#structureCalendar header .left,
+#structureCalendar header .center,
+#structureCalendar header .right {
+    width: calc(100% / 3 - 1rem);
+    float: left;
+}
+
+#structureCalendar header .left h1,
+#structureCalendar header .center h1,
+#structureCalendar header .right h1 {
+    line-height: 1.8rem;
+    font-size: 25px;
+}
+
+#structureCalendar header .left button,
+#structureCalendar header .center button,
+#structureCalendar header .right button {
+    background-color: #0815d0;
+    border: 1px solid #0815d0;
+    color: #fdfdfd;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+
+#structureCalendar header .left button:hover,
+#structureCalendar header .center button:hover,
+#structureCalendar header .right button:hover {
+    background-color: #0816de;
+    border-color: #0816de;
+    color: #fdfdfd;
+    transition: all 500ms ease;
+}
+
+#calendar {
+    width: 100%;
+}
+
+#calendar #days,
+#calendar #weekdays {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#calendar #days li,
+#calendar #weekdays li {
+    display: block;
+    float: left;
+    width: calc(100% / 7);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#calendar #weekdays {
+    height: 40px;
+    background: #0815d0;
+    border-bottom: 2px solid #0712b7;
+}
+
+#calendar #weekdays li {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 20px;
+    border: none !important;
+    padding: 10px 6px;
+    color: #fdfdfd;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#calendar #weekdays .today {
+    background: #0712b7;
+    color: #fdfdfd;
+}
+
+#calendar #days li {
+    height: 150px;
+    overflow-y: auto;
+    background: #fdfdfd;
+    position: relative;
+    color: #0712b7;
+    border: 1px solid #f0f0f0;
+}
+
+#calendar #days li:hover {
+    background: #f0f0f0;
+}
+
+#calendar #days li .info {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    opacity: 0;
+}
+
+#calendar #days li .date {
+    text-align: center;
+    margin-bottom: 5px;
+    background: #777ffa;
+    color: #fdfdfd;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#calendar #days .today {
+    background: #f2f2fe;
+}
+
+#calendar #days .today:hover {
+    background: #c0c4fd;
+}
+
+.ev {
+    display: block;
+    background: #f2f2fe;
+    border: 1px solid #c0c4fd;
+    border-radius: 4px;
+    margin: 5px auto;
+    transition: background 500ms ease;
+}
+
+.ev:hover {
+    background: #777ffa;
+    transition: background 500ms ease;
+}
+
+.ev-desc {
+    padding: 0.2rem 0.5rem;
+}
+
+.ev-desc a {
+    text-decoration: none;
+    color: #06109e;
+    transition: color 500ms ease;
+}
+
+.ev:hover .ev-desc a {
+    color: #a8adfc;
+    transition: color 500ms ease;
+}
+
+@media (max-width: 768px) {
+    #structureCalendar header {
+        height: auto;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    #structureCalendar header .left,
+    #structureCalendar header .center,
+    #structureCalendar header .right {
+        width: 100%;
+        float: none;
+    }
+
+    #calendar #weekdays,
+    #calendar .null {
+        display: none;
+    }
+
+    #calendar #days li {
+        height: auto !important;
+        border: 1px solid #f0f0f0;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: -1px;
+    }
+
+    #calendar #days li .info {
+        left: 2px;
+        opacity: 1;
+        color: #d9dbfe;
+    }
+
+    #calendar .date {
+        float: none;
+    }
+}
