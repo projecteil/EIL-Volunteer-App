@@ -60,6 +60,6 @@ async function loadNotifications() {
         }
     } else {
         console.log("panda");
-        document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center"><img style="width:320px;" src="img/pandajpg.jpg" ><br>No notifications yet!<br><br>We will notify you when something arrives.</div></div>';
+        document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center">No notifications yet!<br><br>We will notify you when something arrives.<img style="width:320px;" src="img/pandajpg.jpg" ></div></div>';
     }
 }
