@@ -124,7 +124,7 @@ async function loadTiles() {
     });
 
     let secretData = await responseViewContact.json();
-    let Id = secretData["records"]["0"]["Id"];
+    let Id = await responseViewContact.json()["records"]["0"]["Id"];
     console.log("now.....");
     console.log(Id);
 
