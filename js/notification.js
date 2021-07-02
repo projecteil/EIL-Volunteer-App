@@ -1,5 +1,6 @@
 window.onload = function () {
     checkSessionValidity();
+    loadTiles();
 }
 
 function checkSessionValidity() {
@@ -112,7 +113,22 @@ async function loadTiles() {
     let noOfCampaigns = 0;
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
 
-    let campaignData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Name,Type,StartDate,GW_Volunteers__Volunteers_Still_Needed__c,GW_Volunteers__Volunteer_Jobs__c+from+Campaign+Where+IsActive+=+True+And+EndDate+>=" + currentDate, {
+    let email = getCookie("Id");
+    let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Id+from+Contact+where+Email+=+'" + email + "'", {
+        method: "GET",
+        mode: 'cors',
+        headers: {
+            "Content-type": "application/json;charset=UTF-8",
+            "Authorization": "Bearer " + await getToken()
+        }
+    });
+
+    let secretData = await responseViewContact.json();
+    let Id = secretData["records"]["0"]["Id"];
+    console.log("now.....");
+    console.log(Id);
+
+    let campaignData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject+FROM+TASK+WHERE+WhoId=" + currentDate, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -155,9 +171,4 @@ async function loadTiles() {
             document.getElementById("jobsCampaign4").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
         }
     }
-}
-
-async function editProfile() {
-
-    window.location.replace("./edit.html");
 }
