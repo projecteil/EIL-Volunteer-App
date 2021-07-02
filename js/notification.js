@@ -110,7 +110,7 @@ async function getVolunteerStats() {
 
 async function loadTiles() {
     let currentDate = getCurrentDate();
-    let noOfCampaigns = 0;
+    let noOfEmails = 0;
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
     let email = getCookie("Id");
 
@@ -137,37 +137,14 @@ async function loadTiles() {
 
     taskObject = await taskData.json();
     console.log(taskObject);
-    Object.entries(campaignResponse["records"]).forEach(
+    Object.entries(taskObject["records"]).forEach(
         ([key1, value1]) => {
-            noOfCampaigns = noOfCampaigns + 1;
+            noOfEmails = noOfEmails + 1;
         }
     );
-
-    for (let i = 0; i < noOfCampaigns; i++) {
-        if (i == 0) {
-            document.getElementById("headingCampaign1").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign1").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
-            document.getElementById("volunteerNeededCampaign1").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
-            document.getElementById("typeCampaign1").innerHTML = campaignResponse["records"][i]["Type"];
-            document.getElementById("jobsCampaign1").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
-        } else if (i == 1) {
-            document.getElementById("headingCampaign2").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign2").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
-            document.getElementById("volunteerNeededCampaign2").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
-            document.getElementById("typeCampaign2").innerHTML = campaignResponse["records"][i]["Type"];
-            document.getElementById("jobsCampaign3").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
-        } else if (i == 2) {
-            document.getElementById("headingCampaign3").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign3").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
-            document.getElementById("volunteerNeededCampaign3").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
-            document.getElementById("typeCampaign3").innerHTML = campaignResponse["records"][i]["Type"];
-            document.getElementById("jobsCampaign3").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
-        } else if (i == 3) {
-            document.getElementById("headingCampaign4").innerHTML = campaignResponse["records"][i]["Name"];
-            document.getElementById("startDateCampaign4").innerHTML = "Starting " + campaignResponse["records"][i]["StartDate"];
-            document.getElementById("volunteerNeededCampaign4").innerHTML = "Volunteers Req. " + campaignResponse["records"][i]["GW_Volunteers__Volunteers_Still_Needed__c"];
-            document.getElementById("typeCampaign4").innerHTML = campaignResponse["records"][i]["Type"];
-            document.getElementById("jobsCampaign4").innerHTML = "Total Jobs " + campaignResponse["records"][i]["GW_Volunteers__Volunteer_Jobs__c"];
-        }
+    let notificationsList = [];
+    for (let i = 0; i < noOfEmails; i++) {
+        notificationsList.push(taskObject["records"][i]["Name"]);
     }
+    console.log(notificationsList);
 }
