@@ -2,6 +2,7 @@ window.onload = function () {
     checkSessionValidity();
     loadTiles();
     getVolunteerStats();
+    loadNotifications();
 }
 
 function checkSessionValidity() {
