@@ -46,6 +46,6 @@ async function loadNotifications() {
     }
     console.log(notificationsList);
 
-    document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-text">' + notificationsList[0] + '</div></div>';
+    document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + notificationsList[0] + '</div></div>';
     document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-text">' + notificationsList[1] + '</div></div>';
 }

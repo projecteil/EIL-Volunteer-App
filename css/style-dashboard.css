@@ -1221,6 +1221,7 @@ div#closeButton:hover {
 	font-size: 14px;
 	word-spacing: 2px;
 	line-height: 21px;
+	width: 80%;
 }
 
 .notification-li {
@@ -1232,4 +1233,9 @@ div#closeButton:hover {
 	-moz-border-image: -moz-linear-gradient(right, white, #cedae0, #cedae0, white) 1 20%;
 	-o-border-image: -o-linear-gradient(right, white, #cedae0, #cedae0, white) 1 20%;
 	border-image: linear-gradient(to right, white 0%, #cedae0 40%, #cedae0 60%, white 100%) 1 20%;
+}
+
+.notification-image {
+	display: block;
+	width: 20%;
 }
