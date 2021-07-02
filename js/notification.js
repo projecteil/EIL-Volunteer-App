@@ -1,4 +1,4 @@
-let toggle = true;
+let toggle = false;
 
 function checkSessionValidity() {
     if (getCookie("IsActive") == null || getCookie("IsActive") == "") {
