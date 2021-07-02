@@ -1228,6 +1228,7 @@ div#closeButton:hover {
 	background: #FFF;
 	padding: 15px;
 	border: 0px;
+	display: flex;
 	border-style: solid;
 	border-bottom-width: 1px;
 	-moz-border-image: -moz-linear-gradient(right, white, #cedae0, #cedae0, white) 1 20%;
