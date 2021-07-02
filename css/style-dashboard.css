@@ -1247,7 +1247,7 @@ div#closeButton:hover {
 }
 
 ::-webkit-scrollbar {
-	width: 2px;
+	width: 5px;
 }
 
 /* Track */
@@ -1257,7 +1257,7 @@ div#closeButton:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #888;
+	background: rgb(184, 182, 182);
 }
 
 /* Handle on hover */
