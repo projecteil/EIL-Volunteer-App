@@ -44,7 +44,7 @@ async function loadNotifications() {
     document.getElementById("ntfc").innerHTML = "";
     for (let i = 0; i < noOfEmails; i++) {
         notificationsList.push(taskObject["records"][i]["Subject"]);
-        dateList.push(taskObject["records"][i]["Subject"]);
+        dateList.push(taskObject["records"][i]["ActivityDate"]);
     }
     console.log(notificationsList);
 
