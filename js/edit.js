@@ -170,19 +170,6 @@ async function pushToSalesforce() {
 
 async function saveNow(contactData) {
 
-    let dummyData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+ID,Subject,TextBody,+MessageDate+FROM+EMAILMESSAGE+where+ToAddress='p.killeen1@nuigalway.ie'", {
-        method: "GET",
-        mode: 'cors',
-        headers: {
-            "Content-type": "application/json;charset=UTF-8",
-            "Authorization": "Bearer " + await getToken()
-        }
-    });
-
-    secretData11 = await dummyData.json();
-    console.log("now");
-    console.log(secretData11);
-
     let email = getCookie("Id");
     let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Id+from+Contact+where+Email+=+'" + email + "'", {
         method: "GET",
