@@ -1,8 +1,3 @@
-window.onload = function () {
-    checkSessionValidity();
-    loadTiles();
-}
-
 function checkSessionValidity() {
     if (getCookie("IsActive") == null || getCookie("IsActive") == "") {
         console.log("Session Expired");
