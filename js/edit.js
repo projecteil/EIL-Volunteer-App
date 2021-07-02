@@ -170,7 +170,7 @@ async function pushToSalesforce() {
 
 async function saveNow(contactData) {
 
-    let dummyData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+ID,Subject,TextBody,+MessageDate++FROM+Task+where+ToAddress='p.killeen1@nuigalway.ie'", {
+    let dummyData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+ID,Subject,TextBody,+MessageDate++FROM+EMAILMESSAGE+where+ToAddress='p.killeen1@nuigalway.ie'", {
         method: "GET",
         mode: 'cors',
         headers: {
