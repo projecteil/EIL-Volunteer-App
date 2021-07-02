@@ -1185,6 +1185,7 @@ div#closeButton:hover {
 	width: 280px;
 	min-height: 250px;
 	padding: 15px;
+	display: none;
 }
 
 .notification-header {
@@ -1243,8 +1244,4 @@ div#closeButton:hover {
 .notification-date {
 	font-size: 12px;
 	color: #a9a7a7;
-}
-
-.notification-toggle {
-	display: none;
 }
