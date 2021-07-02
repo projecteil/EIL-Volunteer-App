@@ -40,8 +40,12 @@ async function loadNotifications() {
         }
     );
     let notificationsList = [];
+    document.getElementById("ntfc").innerHTML = "";
     for (let i = 0; i < noOfEmails; i++) {
         notificationsList.push(taskObject["records"][i]["Subject"]);
     }
     console.log(notificationsList);
+
+    document.getElementById("ntfc").innerHTML += notificationsList[0];
+    document.getElementById("ntfc").innerHTML += notificationsList[1];
 }

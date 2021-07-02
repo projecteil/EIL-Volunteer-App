@@ -1181,7 +1181,7 @@ div#closeButton:hover {
 .notification-container {
 	display: block;
 	position: absolute;
-	top: 52px;
+	top: 40px;
 	right: 0;
 	width: 280px;
 	min-height: 250px;
