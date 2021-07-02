@@ -1,7 +1,21 @@
+let toggle = true;
+
 function checkSessionValidity() {
     if (getCookie("IsActive") == null || getCookie("IsActive") == "") {
         console.log("Session Expired");
         window.location.replace("./login.html");
+    }
+}
+
+function notificationToggle() {
+    if (toggle) {
+        console.log("if", toggle);
+        document.getElementById("notification-toggle").style.cssText = "display:none";
+        toggle = !toggle;
+    } else {
+        console.log("else", toggle);
+        document.getElementById("notification-toggle").style.cssText = "display:block";
+        toggle = !toggle;
     }
 }
 
