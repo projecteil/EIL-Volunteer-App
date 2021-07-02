@@ -124,7 +124,7 @@ async function loadTiles() {
     });
 
     let secretData = await responseViewContact.json();
-    let Id = await responseViewContact.json()["records"]["0"]["Id"];
+    let Id = secretData["records"]["0"]["Id"];
 
     let taskData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject+FROM+TASK+WHERE+WhoId='" + Id + "'", {
         method: "GET",
@@ -135,7 +135,7 @@ async function loadTiles() {
         }
     });
 
-    taskObject = await TaskData.json();
+    taskObject = await taskData.json();
     console.log(taskObject);
     Object.entries(campaignResponse["records"]).forEach(
         ([key1, value1]) => {
