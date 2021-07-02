@@ -1240,3 +1240,8 @@ div#closeButton:hover {
 	display: block;
 	width: 12%;
 }
+
+.notification-date {
+	font-size: small;
+	color: gray;
+}
