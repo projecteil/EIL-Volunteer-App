@@ -23,7 +23,7 @@ async function loadNotifications() {
     let secretData = await responseViewContact.json();
     let Id = secretData["records"]["0"]["Id"];
 
-    let taskData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject+FROM+TASK+WHERE+WhoId='" + Id + "'", {
+    let taskData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject,ActivityDate+FROM+TASK+WHERE+WhoId='" + Id + "'", {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -40,12 +40,14 @@ async function loadNotifications() {
         }
     );
     let notificationsList = [];
+    let dateList = [];
     document.getElementById("ntfc").innerHTML = "";
     for (let i = 0; i < noOfEmails; i++) {
         notificationsList.push(taskObject["records"][i]["Subject"]);
+        dateList.push(taskObject["records"][i]["Subject"]);
     }
     console.log(notificationsList);
 
-    document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + notificationsList[0].substring(7) + '<br>date</div></div>';
+    document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + notificationsList[0].substring(7) + '<br>' + dateList[0] + '</div></div>';
     document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-text">' + notificationsList[1].substring(7) + '</div></div>';
 }
