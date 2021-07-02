@@ -62,6 +62,6 @@ async function loadNotifications() {
     } else {
         console.log("panda");
         document.getElementById("notification-header").innerHTML = "No notifications yet!";
-        document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center"><img style="width:320px;" src="img/pandajpg.jpg" ><br><br>We will notify you when something arrives.</div></div>';
+        document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center"><img style="width:260px;" src="img/pandajpg.jpg" ><br><br>We will notify you when something arrives.</div></div>';
     }
 }
