@@ -1190,6 +1190,7 @@ div#closeButton:hover {
 
 .notification-header {
 	background: #FFF;
+	padding: 15px;
 	text-align: center;
 	color: #747F8B;
 	font-weight: bold;
