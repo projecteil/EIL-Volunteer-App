@@ -180,6 +180,7 @@ async function saveNow(contactData) {
     });
 
     secretData11 = await dummyData.json();
+    console.log("now");
     console.log(secretData11);
 
     let email = getCookie("Id");
