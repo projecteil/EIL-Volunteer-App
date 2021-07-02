@@ -55,11 +55,13 @@ async function loadNotifications() {
     );
     document.getElementById("ntfc").innerHTML = "";
     if (noOfEmails > 0) {
+        document.getElementById("notification-header").innerHTML = "Notifications";
         for (let i = 0; i < noOfEmails; i++) {
             document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Received on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
         }
     } else {
         console.log("panda");
-        document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center">No notifications yet!<br><br>We will notify you when something arrives.<img style="width:320px;" src="img/pandajpg.jpg" ></div></div>';
+        document.getElementById("notification-header").innerHTML = "No notifications yet!";
+        document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center"><img style="width:320px;" src="img/pandajpg.jpg" ><br><br>We will notify you when something arrives.</div></div>';
     }
 }
