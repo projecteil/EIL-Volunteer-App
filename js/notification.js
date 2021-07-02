@@ -43,11 +43,6 @@ async function loadNotifications() {
     let dateList = [];
     document.getElementById("ntfc").innerHTML = "";
     for (let i = 0; i < noOfEmails; i++) {
-        notificationsList.push(taskObject["records"][i]["Subject"]);
-        dateList.push(taskObject["records"][i]["ActivityDate"]);
+        document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Sent on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
     }
-    console.log(notificationsList);
-
-    document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + notificationsList[0].substring(7) + '<br><span class="notification-date">Sent on ' + dateList[0] + '</span></div></div>';
-    document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-text">' + notificationsList[1].substring(7) + '</div></div>';
 }
