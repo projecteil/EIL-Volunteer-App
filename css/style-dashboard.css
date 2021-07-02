@@ -1203,4 +1203,10 @@ div#closeButton:hover {
 	box-shadow: 0px 2px 10px -2px #cedae0;
 }
 
-.notification-body {}
+.notification-body {
+	max-height: 292px;
+	background: #e9f0f3;
+	overflow-y: auto;
+	overflow-x: hidden;
+	min-height: 100px;
+}
