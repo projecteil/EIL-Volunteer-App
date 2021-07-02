@@ -144,7 +144,7 @@ async function loadTiles() {
     );
     let notificationsList = [];
     for (let i = 0; i < noOfEmails; i++) {
-        notificationsList.push(taskObject["records"][i]["Name"]);
+        notificationsList.push(taskObject["records"][i]["Subject"]);
     }
     console.log(notificationsList);
 }
