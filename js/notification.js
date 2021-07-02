@@ -112,8 +112,8 @@ async function loadTiles() {
     let currentDate = getCurrentDate();
     let noOfCampaigns = 0;
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
-
     let email = getCookie("Id");
+
     let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Id+from+Contact+where+Email+=+'" + email + "'", {
         method: "GET",
         mode: 'cors',
@@ -125,10 +125,8 @@ async function loadTiles() {
 
     let secretData = await responseViewContact.json();
     let Id = await responseViewContact.json()["records"]["0"]["Id"];
-    console.log("now.....");
-    console.log(Id);
 
-    let campaignData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject+FROM+TASK+WHERE+WhoId=" + currentDate, {
+    let taskData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject+FROM+TASK+WHERE+WhoId='" + Id + "'", {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -137,7 +135,8 @@ async function loadTiles() {
         }
     });
 
-    campaignResponse = await campaignData.json();
+    taskObject = await TaskData.json();
+    console.log(taskObject);
     Object.entries(campaignResponse["records"]).forEach(
         ([key1, value1]) => {
             noOfCampaigns = noOfCampaigns + 1;
