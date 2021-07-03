@@ -1269,6 +1269,7 @@ div#closeButton:hover {
 
 /*****************************************************Chat CSS*****************************************************************/
 .chat-container {
+	z-index: 15;
 	position: absolute;
 	top: 54px;
 	right: 8px;
