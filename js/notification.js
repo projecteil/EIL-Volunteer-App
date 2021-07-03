@@ -59,7 +59,6 @@ async function loadNotifications() {
             setTimeout(function () {
                 document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Received on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
             }, i * 200);
-
         }
     } else {
         console.log("panda");
