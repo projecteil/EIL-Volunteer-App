@@ -10,25 +10,17 @@ function checkSessionValidity() {
 function notificationToggle() {
     if (toggle) {
         document.getElementById("notification-toggle").style.cssText = "opacity:0";
-        setTimeout(function () {
-            document.getElementById("notification-toggle").style.cssText = "display:none";
-        }, 1000);
         toggle = !toggle;
     } else {
         document.getElementById("ntfc").innerHTML = "";
-        loadNotifications();
         document.getElementById("notification-toggle").style.cssText = "opacity:1";
-        setTimeout(function () {
-            document.getElementById("notification-toggle").style.cssText = "display:block";
-        }, 1000);
         toggle = !toggle;
+        loadNotifications();
     }
 }
 
 async function loadNotifications() {
-    let currentDate = getCurrentDate();
     let noOfEmails = 0;
-    document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
     let email = getCookie("Id");
 
     let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Id+from+Contact+where+Email+=+'" + email + "'", {
@@ -53,7 +45,6 @@ async function loadNotifications() {
     });
 
     taskObject = await taskData.json();
-    console.log(taskObject);
     Object.entries(taskObject["records"]).forEach(
         ([key1, value1]) => {
             noOfEmails = noOfEmails + 1;

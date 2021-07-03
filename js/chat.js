@@ -3,14 +3,12 @@ let chatEnabled = false;
 function chatToggle() {
     if (chatEnabled) {
         document.getElementById("chat-toggle").style.cssText = "opacity:0";
-        document.getElementById("chat-toggle").style.cssText = "display:none";
         chatEnabled = !chatEnabled;
     } else {
         document.getElementById("chtc").innerHTML = "";
         document.getElementById("chat-toggle").style.cssText = "opacity:1";
-        document.getElementById("chat-toggle").style.cssText = "display:block";
-        loadChats();
         chatEnabled = !chatEnabled;
+        loadChats();
     }
 }
 
