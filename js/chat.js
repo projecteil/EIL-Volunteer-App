@@ -9,10 +9,11 @@ function checkSessionValidity() {
 
 function notificationToggle() {
     if (toggle) {
+        console.log("if", toggle);
         document.getElementById("notification-toggle").style.cssText = "display:none";
         toggle = !toggle;
     } else {
-        loadNotifications();
+        console.log("else", toggle);
         document.getElementById("notification-toggle").style.cssText = "display:block";
         toggle = !toggle;
     }
