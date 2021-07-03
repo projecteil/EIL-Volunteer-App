@@ -28,7 +28,7 @@ body {
 .top-menubar {
 	background-color: #fff;
 	padding: 10px;
-
+	height: 8vh;
 }
 
 .date-top-menubar {}
@@ -38,7 +38,7 @@ body {
 	box-sizing: border-box;
 	width: 200px;
 	background-color: #fff;
-	height: 900px;
+	height: 100vh;
 	padding: 25px;
 	display: inline-block;
 	vertical-align: top;
