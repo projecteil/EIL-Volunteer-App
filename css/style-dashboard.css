@@ -1301,11 +1301,9 @@ div#closeButton:hover {
 }
 
 .chat-body {
-	max-height: 292px;
 	background: #FFF;
 	overflow-y: auto;
 	overflow-x: hidden;
-	min-height: 100px;
 }
 
 .chat-text {
