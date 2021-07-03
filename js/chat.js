@@ -40,8 +40,8 @@ async function loadChats() {
         for (let i = 0; i < noOfVolunteers; i++) {
             let rawName = contactListObj["records"][i]["Name"];
             const arr = rawName.split(" ");
-            for (var i = 0; i < arr.length; i++) {
-                arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+            for (var j = 0; j < arr.length; j++) {
+                arr[j] = arr[j].charAt(0).toUpperCase() + arr[j].slice(1);
 
             }
             const capitalizedName = arr.join(" ");
