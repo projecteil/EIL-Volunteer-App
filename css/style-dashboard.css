@@ -1312,6 +1312,7 @@ div#closeButton:hover {
 	padding-left: 15px;
 	vertical-align: middle;
 	color: #747F8B;
+	margin-left: 15px;
 	cursor: pointer;
 	font-size: 14px;
 	word-spacing: 2px;
@@ -1321,7 +1322,7 @@ div#closeButton:hover {
 
 .chat-li {
 	background: #FFF;
-	padding: 10px;
+	padding: 8px 10px 8px 10px;
 	border: 0px;
 	display: flex;
 	border-style: solid;
@@ -1334,6 +1335,8 @@ div#closeButton:hover {
 .chat-image {
 	display: block;
 	width: 12%;
+	margin-left: 12px;
+	padding-left: 10px;
 }
 
 .chat-date {
