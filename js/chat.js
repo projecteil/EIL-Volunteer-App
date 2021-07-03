@@ -12,7 +12,7 @@ function chatToggle() {
 
 async function loadChats() {
     let currentDate = getCurrentDate();
-    let noOfEmails = 0;
+    let noOfVolunteers = 0;
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
     let email = getCookie("Id");
 
@@ -29,27 +29,17 @@ async function loadChats() {
     console.log("contacts...  ", contactListObj);
     let Id = secretData["records"]["0"]["Id"];
 
-    let taskData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject,ActivityDate+FROM+TASK+WHERE+WhoId='" + Id + "'", {
-        method: "GET",
-        mode: 'cors',
-        headers: {
-            "Content-type": "application/json;charset=UTF-8",
-            "Authorization": "Bearer " + await getToken()
-        }
-    });
-
-    taskObject = await taskData.json();
-    console.log(taskObject);
-    Object.entries(taskObject["records"]).forEach(
+    Object.entries(contactListObj["records"]).forEach(
         ([key1, value1]) => {
-            noOfEmails = noOfEmails + 1;
+            noOfVolunteers = noOfVolunteers + 1;
         }
     );
     document.getElementById("ntfc").innerHTML = "";
-    if (noOfEmails > 0) {
+    if (noOfVolunteers > 0) {
         document.getElementById("notification-header").innerHTML = "Notifications";
-        for (let i = 0; i < noOfEmails; i++) {
-            document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Received on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
+        for (let i = 0; i < noOfVolunteers; i++) {
+            console.log(contactListObj["records"][i]["Name"]);
+            //document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Received on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
         }
     } else {
         console.log("panda");
