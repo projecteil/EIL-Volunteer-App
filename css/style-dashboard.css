@@ -1347,10 +1347,10 @@ div#closeButton:hover {
 .miniChat-container {
 	z-index: 15;
 	position: absolute;
-	top: 54px;
-	right: 8px;
+	bottom: 0px;
+	right: 290px;
 	width: 280px;
-	height: 92.8vh;
+	height: 50vh;
 	padding: 1px 1px 1px 1px;
 	display: block;
 	border-radius: 10px 10px 0 0;
