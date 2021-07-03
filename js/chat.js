@@ -5,6 +5,8 @@ function chatToggle() {
         document.getElementById("chat-toggle").style.cssText = "opacity:0";
         chatEnabled = !chatEnabled;
     } else {
+        document.getElementById("chtc").innerHTML = "";
+        loadChats();
         document.getElementById("chat-toggle").style.cssText = "opacity:1";
         chatEnabled = !chatEnabled;
     }
@@ -32,9 +34,9 @@ async function loadChats() {
             noOfVolunteers = noOfVolunteers + 1;
         }
     );
-    document.getElementById("ntfc").innerHTML = "";
+    document.getElementById("chtc").innerHTML = "";
     if (noOfVolunteers > 0) {
-        document.getElementById("notification-header").innerHTML = "Notifications";
+        document.getElementById("chat-header").innerHTML = "Active Volunteers";
         for (let i = 0; i < noOfVolunteers; i++) {
             let rawName = contactListObj["records"][i]["Name"];
             const arr = rawName.split(" ");
