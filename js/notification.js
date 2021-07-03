@@ -9,11 +9,11 @@ function checkSessionValidity() {
 
 function notificationToggle() {
     if (toggle) {
-        document.getElementById("notification-toggle").style.cssText = "display:none";
+        document.getElementById("notification-toggle").style.cssText = "opacity:0";
         toggle = !toggle;
     } else {
         loadNotifications();
-        document.getElementById("notification-toggle").style.cssText = "display:block";
+        document.getElementById("notification-toggle").style.cssText = "opacity:1";
         toggle = !toggle;
     }
 }
