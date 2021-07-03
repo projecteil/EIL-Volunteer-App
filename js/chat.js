@@ -1,23 +1,16 @@
-let toggle = false;
-
-function checkSessionValidity() {
-    if (getCookie("IsActive") == null || getCookie("IsActive") == "") {
-        console.log("Session Expired");
-        window.location.replace("./login.html");
-    }
-}
+let chatToggle = false;
 
 function chatToggle() {
-    if (toggle) {
+    if (chatToggle) {
         document.getElementById("chat-toggle").style.cssText = "display:none";
-        toggle = !toggle;
+        chatToggle = !chatToggle;
     } else {
         document.getElementById("chat-toggle").style.cssText = "display:block";
-        toggle = !toggle;
+        chatToggle = !chatToggle;
     }
 }
 
-async function loadNotifications() {
+async function loadChats() {
     let currentDate = getCurrentDate();
     let noOfEmails = 0;
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
