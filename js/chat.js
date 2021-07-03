@@ -1,5 +1,6 @@
 window.onload = function () {
-    loadChats();
+    //loadChats();
+
 }
 let chatEnabled = false;
 
