@@ -38,11 +38,16 @@ async function loadChats() {
     if (noOfVolunteers > 0) {
         document.getElementById("chat-header").innerHTML = "Active Volunteers";
         for (let i = 0; i < noOfVolunteers; i++) {
-            document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + contactListObj["records"][i]["Name"] + '</div></div>';
+            document.getElementById("chtc").innerHTML += '<div class="chat-li" onclick="popUpMiniChat()"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + contactListObj["records"][i]["Name"] + '</div></div>';
         }
     } else {
         console.log("panda");
         document.getElementById("notification-header").innerHTML = "No notifications yet!";
         document.getElementById("ntfc").innerHTML = '<div class="notification-li"><div class="notification-text" style="text-align:center"><img style="width:260px;" src="img/pandajpg.jpg" ><br><br>We will notify you when something arrives.</div></div>';
     }
+}
+
+function popUpMiniChat() {
+    document.getElementById("minichat").innerHTML = "";
+    document.getElementById("miniChat-toggle").style.cssText = "opacity:1";
 }
