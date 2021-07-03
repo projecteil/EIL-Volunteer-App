@@ -1348,9 +1348,9 @@ div#closeButton:hover {
 	z-index: 15;
 	position: absolute;
 	bottom: 0px;
-	right: 290px;
+	right: 292px;
 	width: 280px;
-	height: 50vh;
+	height: 40vh;
 	padding: 1px 1px 1px 1px;
 	display: block;
 	border-radius: 10px 10px 0 0;
