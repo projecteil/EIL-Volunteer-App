@@ -3,7 +3,6 @@ window.onload = function () {
     loadTiles();
     getVolunteerStats();
     loadNotifications();
-    loadChats();
 }
 
 function checkSessionValidity() {
