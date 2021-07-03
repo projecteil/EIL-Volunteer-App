@@ -26,20 +26,18 @@ async function loadChats() {
     });
 
     let contactListObj = await contactListData.json();
-    console.log("contacts...  ", contactListObj);
 
     Object.entries(contactListObj["records"]).forEach(
         ([key1, value1]) => {
             noOfVolunteers = noOfVolunteers + 1;
         }
     );
-    console.log("VV", noOfVolunteers);
     document.getElementById("ntfc").innerHTML = "";
     if (noOfVolunteers > 0) {
         document.getElementById("notification-header").innerHTML = "Notifications";
         for (let i = 0; i < noOfVolunteers; i++) {
             console.log(contactListObj["records"][i]["Name"]);
-            //document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Received on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
+            document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + contactListObj["records"][i]["Name"] + '</div></div>';
         }
     } else {
         console.log("panda");
