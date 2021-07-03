@@ -45,9 +45,7 @@ async function loadChats() {
             for (var j = 0; j < arr.length; j++)
                 arr[j] = arr[j].charAt(0).toUpperCase() + arr[j].slice(1);
             const capitalizedName = arr.join(" ");
-            setTimeout(function () {
-                document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + capitalizedName + '</div></div>';
-            }, i * 200);
+            document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + capitalizedName + '</div></div>';
         }
     } else {
         console.log("panda");
