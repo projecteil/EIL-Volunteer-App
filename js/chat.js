@@ -8,7 +8,7 @@ function chatToggle() {
         document.getElementById("chtc").innerHTML = "";
         document.getElementById("chat-toggle").style.cssText = "opacity:1";
         chatEnabled = !chatEnabled;
-        //loadChats();
+        loadChats();
     }
 }
 
