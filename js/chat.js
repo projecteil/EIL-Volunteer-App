@@ -1,7 +1,3 @@
-window.onload = function () {
-    //loadChats();
-
-}
 let chatEnabled = false;
 
 function chatToggle() {
