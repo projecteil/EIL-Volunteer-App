@@ -7,9 +7,9 @@ function chatToggle() {
         chatEnabled = !chatEnabled;
     } else {
         document.getElementById("chtc").innerHTML = "";
-        loadChats();
         document.getElementById("chat-toggle").style.cssText = "opacity:1";
         document.getElementById("chat-toggle").style.cssText = "display:block";
+        loadChats();
         chatEnabled = !chatEnabled;
     }
 }
