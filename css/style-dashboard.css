@@ -1275,7 +1275,7 @@ div#closeButton:hover {
 	position: absolute;
 	top: 54px;
 	right: 8px;
-	width: 300px;
+	width: 280px;
 	height: 92.8vh;
 	padding: 1px 1px 1px 1px;
 	display: block;
@@ -1304,6 +1304,7 @@ div#closeButton:hover {
 	background: #FFF;
 	overflow-y: auto;
 	overflow-x: hidden;
+	max-height: 90vh;
 }
 
 .chat-text {
@@ -1320,7 +1321,7 @@ div#closeButton:hover {
 
 .chat-li {
 	background: #FFF;
-	padding: 15px;
+	padding: 10px;
 	border: 0px;
 	display: flex;
 	border-style: solid;
