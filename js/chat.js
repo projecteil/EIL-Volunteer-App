@@ -42,14 +42,12 @@ async function loadChats() {
         for (let i = 0; i < noOfVolunteers; i++) {
             let rawName = contactListObj["records"][i]["Name"];
             const arr = rawName.split(" ");
-            for (var j = 0; j < arr.length; j++) {
+            for (var j = 0; j < arr.length; j++)
                 arr[j] = arr[j].charAt(0).toUpperCase() + arr[j].slice(1);
-
-            }
             const capitalizedName = arr.join(" ");
-            for (let i = 0; i < noOfVolunteers; i++) {
+            setTimeout(function () {
                 document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + capitalizedName + '</div></div>';
-            }
+            }, i * 200);
         }
     } else {
         console.log("panda");
