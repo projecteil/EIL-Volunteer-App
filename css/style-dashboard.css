@@ -1182,7 +1182,7 @@ div#closeButton:hover {
 	position: absolute;
 	top: 54px;
 	right: 8px;
-	width: 300px;
+	width: 280px;
 	min-height: 250px;
 	padding: 1px 1px 1px 1px;
 	display: none;
@@ -1275,7 +1275,7 @@ div#closeButton:hover {
 	width: 300px;
 	min-height: 250px;
 	padding: 1px 1px 1px 1px;
-	display: none;
+	display: block;
 	border-radius: 10px 10px 0 0;
 	border: 0px;
 	border-style: solid;
