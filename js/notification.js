@@ -12,6 +12,7 @@ function notificationToggle() {
         document.getElementById("notification-toggle").style.cssText = "opacity:0";
         toggle = !toggle;
     } else {
+        document.getElementById("ntfc").innerHTML = "";
         loadNotifications();
         document.getElementById("notification-toggle").style.cssText = "opacity:1";
         toggle = !toggle;
@@ -52,13 +53,12 @@ async function loadNotifications() {
             noOfEmails = noOfEmails + 1;
         }
     );
-    document.getElementById("ntfc").innerHTML = "";
     if (noOfEmails > 0) {
         document.getElementById("notification-header").innerHTML = "Notifications";
         for (let i = 0; i < noOfEmails; i++) {
             setTimeout(function () {
                 document.getElementById("ntfc").innerHTML += '<div class="notification-li"><div class="notification-image"><img src="img/emailnt.svg" ></div><div class="notification-text">' + taskObject["records"][i]["Subject"].substring(7) + '<br><span class="notification-date">Received on ' + taskObject["records"][i]["ActivityDate"] + '</span></div></div>';
-            }, i * 1000);
+            }, i * 500);
 
         }
     } else {
