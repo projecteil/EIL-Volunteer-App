@@ -41,12 +41,8 @@ async function loadChats() {
     if (noOfVolunteers > 0) {
         document.getElementById("chat-header").innerHTML = "Active Volunteers";
         for (let i = 0; i < noOfVolunteers; i++) {
-            let rawName = contactListObj["records"][i]["Name"];
-            const arr = rawName.split(" ");
-            for (var j = 0; j < arr.length; j++)
-                arr[j] = arr[j].charAt(0).toUpperCase() + arr[j].slice(1);
-            const capitalizedName = arr.join(" ");
-            document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + capitalizedName + '</div></div>';
+
+            document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + contactListObj["records"][i]["Name"] + '</div></div>';
         }
     } else {
         console.log("panda");
