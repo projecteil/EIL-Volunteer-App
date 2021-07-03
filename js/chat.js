@@ -7,14 +7,12 @@ function checkSessionValidity() {
     }
 }
 
-function notificationToggle() {
+function chatToggle() {
     if (toggle) {
-        console.log("if", toggle);
-        document.getElementById("notification-toggle").style.cssText = "display:none";
+        document.getElementById("chat-toggle").style.cssText = "display:none";
         toggle = !toggle;
     } else {
-        console.log("else", toggle);
-        document.getElementById("notification-toggle").style.cssText = "display:block";
+        document.getElementById("chat-toggle").style.cssText = "display:block";
         toggle = !toggle;
     }
 }
