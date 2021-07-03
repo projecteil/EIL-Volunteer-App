@@ -45,7 +45,7 @@ async function loadChats() {
 
             }
             const capitalizedName = arr.join(" ");
-            for (let i = 0; i < noOfEmails; i++) {
+            for (let i = 0; i < noOfVolunteers; i++) {
                 setTimeout(function () {
                     document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + capitalizedName + '</div></div>';
                 }, i * 200);
