@@ -1288,7 +1288,7 @@ div#closeButton:hover {
 	border-image: linear-gradient(to right, white 0%, #cedae0 40%, #cedae0 60%, white 100%) 1 20%;
 	box-shadow: 0px 2px 10px -2px #cedae0;
 	background: #fff;
-	transition: 1s;
+	transition: 0.8s;
 	opacity: 0;
 }
 
