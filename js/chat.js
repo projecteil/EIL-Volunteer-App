@@ -1,12 +1,12 @@
-let chatToggle = false;
+let chatEnabled = false;
 
 function chatToggle() {
-    if (chatToggle) {
+    if (chatEnabled) {
         document.getElementById("chat-toggle").style.cssText = "display:none";
-        chatToggle = !chatToggle;
+        chatEnabled = !chatEnabled;
     } else {
         document.getElementById("chat-toggle").style.cssText = "display:block";
-        chatToggle = !chatToggle;
+        chatEnabled = !chatEnabled;
     }
 }
 
