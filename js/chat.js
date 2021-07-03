@@ -27,13 +27,13 @@ async function loadChats() {
 
     let contactListObj = await contactListData.json();
     console.log("contacts...  ", contactListObj);
-    let Id = secretData["records"]["0"]["Id"];
 
     Object.entries(contactListObj["records"]).forEach(
         ([key1, value1]) => {
             noOfVolunteers = noOfVolunteers + 1;
         }
     );
+    console.log("VV", noOfVolunteers);
     document.getElementById("ntfc").innerHTML = "";
     if (noOfVolunteers > 0) {
         document.getElementById("notification-header").innerHTML = "Notifications";
