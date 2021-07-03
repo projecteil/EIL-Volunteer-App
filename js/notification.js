@@ -10,11 +10,17 @@ function checkSessionValidity() {
 function notificationToggle() {
     if (toggle) {
         document.getElementById("notification-toggle").style.cssText = "opacity:0";
+        setTimeout(function () {
+            document.getElementById("notification-toggle").style.cssText = "display:none";
+        }, 1000);
         toggle = !toggle;
     } else {
         document.getElementById("ntfc").innerHTML = "";
         loadNotifications();
         document.getElementById("notification-toggle").style.cssText = "opacity:1";
+        setTimeout(function () {
+            document.getElementById("notification-toggle").style.cssText = "display:block";
+        }, 1000);
         toggle = !toggle;
     }
 }
