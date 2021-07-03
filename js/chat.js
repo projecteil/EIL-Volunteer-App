@@ -16,7 +16,7 @@ async function loadChats() {
     document.getElementById("currentDateTag").innerHTML = "&nbsp;&nbsp;" + currentDate;
     let email = getCookie("Id");
 
-    let responseViewContact = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+Id+from+Contact+where+Email+=+'" + email + "'", {
+    let contactListData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=select+id,name+from+Contact+where+GW_Volunteers__Volunteer_Status__c='Active'", {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -25,7 +25,8 @@ async function loadChats() {
         }
     });
 
-    let secretData = await responseViewContact.json();
+    let contactListObj = await contactListData.json();
+    console.log("contacts...  ", contactListObj);
     let Id = secretData["records"]["0"]["Id"];
 
     let taskData = await fetch("https://eilireland.my.salesforce.com/services/data/v25.0/query?q=SELECT+Description,Subject,ActivityDate+FROM+TASK+WHERE+WhoId='" + Id + "'", {
