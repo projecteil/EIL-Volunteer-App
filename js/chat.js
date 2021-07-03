@@ -37,7 +37,6 @@ async function loadChats() {
     if (noOfVolunteers > 0) {
         document.getElementById("chat-header").innerHTML = "Active Volunteers";
         for (let i = 0; i < noOfVolunteers; i++) {
-
             document.getElementById("chtc").innerHTML += '<div class="chat-li"><div class="chat-image"><img src="img/emailnt.svg" ></div><div class="chat-text">' + contactListObj["records"][i]["Name"] + '</div></div>';
         }
     } else {
