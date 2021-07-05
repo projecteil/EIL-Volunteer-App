@@ -1367,11 +1367,12 @@ div#closeButton:hover {
 }
 
 .miniChat-header {
-	background: #FFF;
-	padding: 15px;
+	background: #117dca;
+	padding: 16px;
 	text-align: center;
 	color: #747F8B;
 	font-weight: bold;
+	border-radius: 2px;
 }
 
 .miniChat-body {
