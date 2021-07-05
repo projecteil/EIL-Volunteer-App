@@ -1369,9 +1369,9 @@ div#closeButton:hover {
 .miniChat-header {
 	background: #117dca;
 	padding: 16px;
-	text-align: center;
-	color: #747F8B;
-	font-weight: bold;
+	text-align: left;
+	color: #ffffff;
+	font-weight: 500;
 	border-radius: 2px;
 }
 
