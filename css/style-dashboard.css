@@ -1418,3 +1418,7 @@ div#closeButton:hover {
 	font-size: 12px;
 	color: #a9a7a7;
 }
+
+.miniChat-header:hover {
+	cursor: pointer;
+}
