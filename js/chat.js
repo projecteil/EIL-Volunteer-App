@@ -51,3 +51,7 @@ function popUpMiniChat() {
     document.getElementById("minichat").innerHTML = "";
     document.getElementById("miniChat-toggle").style.cssText = "opacity:1";
 }
+
+function closeChatWindow() {
+    document.getElementById("miniChatHeader").style.cssText = "display:None";
+}
