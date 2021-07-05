@@ -53,5 +53,5 @@ function popUpMiniChat() {
 }
 
 function closeChatWindow() {
-    document.getElementById("miniChatHeader").style.cssText = "display:None";
+    document.getElementById("miniChat-toggle").style.cssText = "display:None";
 }
